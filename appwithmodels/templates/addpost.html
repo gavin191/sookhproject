@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% block content %}
+      <div id="contact-form">
+
+                  <!-- form -->
+                  <form name="contactForm" id="contactForm" method="post" action="">
+      					<fieldset>
+
+                    <!----------------------- title ----------------------------------------->
+					       <label for="title">Ad Title</label>
+      					   <input name="title" type="text" id="title" size="35" value="" />
+                                         <br />
+
+
+                    <!----------------------- categories ----------------------------------------->
+
+      						   <label for="categories">Categories</label>
+      						  
+							   <select name="categories" >
+							   <option type="text" id="categories" size="35" value="mobiles" />mobiles</option>
+							   	   <option  id="categories" size="35" value="electronics" />electronics</option>
+								   	   <option id="categories" size="35" value="cars" />cars</option>
+									   	   <option id="categories" size="35" value="bikes" />bikes</option>
+                                              <option id="categories" size="35" value="furniture" />furniture</option>
+								</select>
+										   
+                     <br />
+
+                    <!----------------------- subcategories ----------------------------------------->
+
+                   										
+      						 <label for="subcategories">Sub-Categories<span class="required">*</span></label>
+      						  
+								  <select name="subcategories" >
+							   <option id="subcategories" size="35" value="Cars_sub_category" />cars</option>
+							   		   <option id="subcategories" size="35" value="Commercial_vehicle_sub_category" />commercial</option>
+									   		   <option id="subcategories" size="35" value="Other_vehicles_sub_category" />other</option>
+											   		 
+							   </select>
+							 
+                                           <br />
+
+                    <!----------------------- price ----------------------------------------->
+					
+      						   <label for="price">price</label>
+      						   <input name="price" type="text" id="price" size="35" value="" />
+                        
+          
+                               <br />
+
+          
+          
+                    <!----------------------- model ----------------------------------------->
+								
+      						   <label for="model">model</label>
+      						 
+							   <select name="model" >
+							   <option type="text" id="model" size="35" value="" />CARS</option>
+							   	   <option  id="model" size="35" value="" />CARS</option>
+								   	   <option id="model" size="35" value="" />CARS</option>
+									   	   <option id="model" size="35" value="" />CARS</option>
+										   </select>
+										   
+                                             <br />
+
+
+                    <!----------------------- year_manufacture ----------------------------------------->
+
+                    
+					
+      						 <label for="year_manufacture">Year<span class="required">*</span></label>
+      						 <input name="year_manufactureyear" type="text" id="year_manufacture" size="35" value="" />
+							 
+                                 <br />
+
+            
+                    <!----------------------- kilometers_driven ----------------------------------------->
+         
+					
+      						   <label for="kilometers_driven">KM drivens</label>
+      						   <input name="kilometers_driven" type="text" id="kilometers_driven" size="35" value="" />
+
+                     <br />
+
+                    <!----------------------- fuel ----------------------------------------->
+
+
+      						   <label for="fuel">Fuels<span class="required">*</span></label>
+      						   
+							   <select name="fuel" >
+							   <option type="text" id="fuel" size="35" value="" />Petrol</option>
+							   	   <option  id="fuel" size="35" value="" />Diesel</option>
+								   	   <option id="fuel" size="35" value="" />LPG</option>
+									   	   <option id="fuel" size="35" value="" />Electric</option>
+										   </select>
+                     <br />
+
+
+                
+                    <!----------------------- description ----------------------------------------->
+
+
+					
+						
+						
+					
+                           <label  for="description">Description <span class="required">*</span></label>
+                           <textarea name="description"  id="description" rows="15" cols="50" ></textarea>
+
+                     <br />
+
+                   <!----------------------- photo ----------------------------------------->
+
+
+						<label for="photo">Select Multiple Photos<span class="required">*</span></label>
+						<ul>
+						<li> <input id="photo" type="file" multiple="multiple"/> 
+        </li>
+						</ul>
+						
+                                             <br />
+
+                    <!----------------------- Name ----------------------------------------->
+		
+      					
+							<label for="name">Name <span class="required">*</span></label>
+      						   <input name="name" type="text" id="name" size="35" value="" />
+                     
+                     <br />
+
+                    <!----------------------- Number ----------------------------------------->
+                
+      						   <label for="phone_number">Number <span class="required">*</span></label>
+      						   <input name="phone_number" type="text" id="phone_number" size="35" value="" />
+                       
+                      <br />
+
+ 
+                    <!----------------------- City ----------------------------------------->
+
+                    
+      						   <label for="city">City</label>
+      						   <input name="city" type="text" id="city" size="35" value="" />
+                                           <br />
+
+
+                       
+
+                     
+                           <button class="submit">Submit</button>
+                         
+                                           <br />
+ 
+
+      					</fieldset>
+      				</form> <!-- Form End -->
+      </div>
+{% endblock %}
