@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
       <div id="contact-form">
-
+           
                   <!-- form -->
-                  <form name="contactForm" id="contactForm" method="post" action="">
-      					<fieldset>
-
+                  <form name="contactForm" id="contactForm" method="post" action="">{% csrf_token %}
+      				
+  <input name="selector" type="text" id="selector" size="35" hidden="true" /> 
                     <!----------------------- title ----------------------------------------->
 					       <label for="title">Ad Title</label>
       					   <input name="title" type="text" id="title" size="35" value="" />
@@ -31,7 +31,7 @@
                    										
       						 <label for="subcategories">Sub-Categories<span class="required">*</span></label>
       						  
-								  <select name="subcategories" >
+								  <select name="subcategories1" id="subcategories1" >
 							   <option id="subcategories" size="35" value="Cars_sub_category" />cars</option>
 							   		   <option id="subcategories" size="35" value="Commercial_vehicle_sub_category" />commercial</option>
 									   		   <option id="subcategories" size="35" value="Other_vehicles_sub_category" />other</option>
@@ -152,7 +152,25 @@
                                            <br />
  
 
-      					</fieldset>
-      				</form> <!-- Form End -->
+      					
+      				</form> <!-- Form End -->    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+					  <script>
+					var selector = $('#selector');
+					$("#contactForm").submit(function(){
+					if(($('#subcategories1').val())=="Cars_sub_category"){
+						selector.val("Cars_sub_category");
+					}
+					else if(($('#subcategories1').val())=="Commercial_vehicle_sub_category"){
+						selector.val("Commercial_vehicle_sub_category");
+					}
+					else {
+                     selector.val("Other_vehicles_sub_category");
+					}
+					console.log(selector.val());
+					});
+						console.log(selector.val());
+							console.log("end");
+						  </script>
       </div>
 {% endblock %}

@@ -1,6 +1,7 @@
-from django.shortcuts import render
-from 
+from django.shortcuts import render, 
+from django.views.decorators.csrf import csrf_protect 
 from appwithmodels.models import Mobiles, Electronics
+from appwithmodels impost forms as frms
 
 # Create your views here.
 
@@ -30,21 +31,15 @@ def electronics_list(request):
 
 def home(request):
     return render(request,'home.html')
-
+@csrf_protect
 def addpost(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = Cars_sub_category(request.POST)
-        # check whether it's valid:
-        if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect()
+        selector = request.POST.get("selector", "")
+        if(selector=="Cars_sub_category"):
+            form = frms.Cars_sub_category(request.POST)
+            if form.is_valid():
+                return HttpResponseRedirect()
+            else:
+                return render(request, 'addpost.html')
 
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = NameForm()
-
-    return render(request, 'name.html', {'form': form})
