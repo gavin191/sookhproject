@@ -73,16 +73,23 @@ WSGI_APPLICATION = 'sookhproject.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
+# https://docs.djangoproject.com/en/1.9/ref/settings/#DATABASES
+
+#DATABASES = {
+ #   'default': {
+ #       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+ #       'NAME': 'sookhprojectdb',
+ #         'USER':'sookhuser',
+ #         'PASSWORD':'qazwsx123',
+   #       'HOST':'localhost',
+ #         'PORT':'',
+ #     }
+ # }
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'sookhprojectdb',
-        'USER':'sookhuser',
-        'PASSWORD':'qazwsx123',
-        'HOST':'localhost',
-        'PORT':'',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
 

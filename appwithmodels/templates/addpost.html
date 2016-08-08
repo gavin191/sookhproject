@@ -3,9 +3,9 @@
       <div id="contact-form">
            
                   <!-- form -->
-                  <form name="contactForm" id="contactForm" method="post" action="">{% csrf_token %}
+                  <form name="contactForm" id="contactForm" method="post" action="/sookh/addpost/">{% csrf_token %}
       				
-  <input name="selector" type="text" id="selector" size="35" hidden="true" /> 
+   <input name="selector" type="text" id="selector" size="35" hidden="true" value="" /> 
                     <!----------------------- title ----------------------------------------->
 					       <label for="title">Ad Title</label>
       					   <input name="title" type="text" id="title" size="35" value="" />
@@ -48,18 +48,18 @@
           
                                <br />
 
+                       <label for="cars_brand_name">car brand name</label>
+      						   <input name="cars_brand_name" type="text" id="cars_brand_name" size="35" value="" />
+                        
+          
+                               <br />
           
           
                     <!----------------------- model ----------------------------------------->
 								
       						   <label for="model">model</label>
-      						 
-							   <select name="model" >
-							   <option type="text" id="model" size="35" value="" />CARS</option>
-							   	   <option  id="model" size="35" value="" />CARS</option>
-								   	   <option id="model" size="35" value="" />CARS</option>
-									   	   <option id="model" size="35" value="" />CARS</option>
-										   </select>
+      						 <input name="model" type="text" id="model" size="35" value="" />
+							
 										   
                                              <br />
 
@@ -167,10 +167,10 @@
 					else {
                      selector.val("Other_vehicles_sub_category");
 					}
-					console.log(selector.val());
 					});
+					console.log("end");
 						console.log(selector.val());
-							console.log("end");
+							
 						  </script>
       </div>
 {% endblock %}
