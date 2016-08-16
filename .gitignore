@@ -1,5 +1,8 @@
 *.pyc
+'*.sqlite3'
 __pycache__
 venv
 db.sqlite3
 .DS_Store
+mydatabase
+media/

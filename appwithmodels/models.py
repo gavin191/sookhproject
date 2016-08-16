@@ -21,8 +21,7 @@ class Tablets_sub_category(Mobiles):
     tablets_brand_name =models.CharField(max_length=250)
 
 class Accessories_sub_category(Mobiles):
-    mobile_accessory_choice_mobile = models.BooleanField()
-    mobile_accessory_choice_tablet = models.BooleanField()
+    mobile_accessory_choice = models.CharField(max_length=250)
     accessory_brand_name =models.CharField(max_length=250)
 
 #electronics section
@@ -67,6 +66,8 @@ class Cars(models.Model):
     name = models.CharField(max_length=250)
     phone_number = models.IntegerField()
     city = models.CharField(max_length=250)
+    subcategories = models.CharField(max_length=250,default='car')
+    categories = models.CharField(max_length=250,default='cars')
 
     class  Meta:
         abstract = True
@@ -75,7 +76,7 @@ class Cars_sub_category(Cars):
     cars_brand_name = models.CharField(max_length=250)
     cars_model = models.CharField(max_length=250)
     kilometers_driven = models.IntegerField()
-    year_manufacture = models.DateField()
+    year_manufacture = models.IntegerField()
     fuel = models.CharField(max_length=250)
 
 class Commercial_vehicle_sub_category(Cars):
@@ -106,8 +107,8 @@ class Bikes(models.Model):
         abstract = True
 
 
-class Motercycles_sub_category(Bikes):
-    motorc_brand_name = models.CharField(max_length=250)
+class Motorcycles_sub_category(Bikes):
+    motorcycle_brand_name = models.CharField(max_length=250)
     bikes_model = models.CharField(max_length=250)
     kilometers_driven = models.IntegerField()
     year_manufacture = models.DateField()
@@ -128,6 +129,8 @@ class Furniture(models.Model):
     name = models.CharField(max_length=250)
     phone_number = models.IntegerField()
     city = models.CharField(max_length=250)
+    categories=models.CharField(max_length=250,default='furniture')
+    subcategories=models.CharField(max_length=250,default='furniture')
 
 
 

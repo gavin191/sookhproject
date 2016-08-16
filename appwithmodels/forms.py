@@ -8,9 +8,9 @@ class Mobile_sub_MobileForm(forms.Form):
     name = forms.CharField(max_length=250)
     phone_number = forms.IntegerField()
     city = forms.CharField(max_length=250)
-    mobile_brand_name= forms.ChoiceField(choices=(('s','samsung',('a','apple'))))
-    categories=forms.CharField(max_length=250)
-    subcategories=forms.CharField(max_length=250)
+    mobile_brand_name= forms.CharField(max_length=250)
+    categories=forms.ChoiceField(choices=(('mobiles','mobiles'),('electronics','electronics'),('cars','cars'),('bikes','bikes'),('furniture','furniture')))
+    subcategories=forms.ChoiceField(choices=(('mobile','mobile'),('tablet','tablet'),('accessories','accessories')))
 
 class Mobile_sub_tablets_form(forms.Form):
     title = forms.CharField(max_length=250)
@@ -20,9 +20,9 @@ class Mobile_sub_tablets_form(forms.Form):
     name = forms.CharField(max_length=250)
     phone_number = forms.IntegerField()
     city = forms.CharField(max_length=250)
-    tablet_brand_name= forms.ChoiceField(choices=(('sam','samsung'),('app','apple')))
-    categories=forms.CharField(max_length=250)
-    subcategories=forms.CharField(max_length=250)
+    tablet_brand_name= forms.CharField(max_length=250)
+    categories=forms.ChoiceField(choices=(('mobiles','mobiles'),('electronics','electronics'),('cars','cars'),('bikes','bikes'),('furniture','furniture')))
+    subcategories=forms.ChoiceField(choices=(('mobile','mobile'),('tablet','tablet'),('accessories','accessories')))
     
 class Mobile_sub_accessories_form(forms.Form):
     title = forms.CharField(max_length=250)
@@ -32,11 +32,11 @@ class Mobile_sub_accessories_form(forms.Form):
     name = forms.CharField(max_length=250)
     phone_number = forms.IntegerField()
     city = forms.CharField(max_length=250)
-    mobile_accessory_choice_mobile = forms.BooleanField()
-    mobile_accessory_choice_tablet = forms.BooleanField()
-    accessory_brand_name =forms.ChoiceField(choices=(('sam','samsung'),('app','apple')))
-    categories=forms.CharField(max_length=250)
-    subcategories=forms.CharField(max_length=250)
+    mobile_accessory_choice = forms.CharField(max_length=250)
+    accessory_brand_name =forms.CharField(max_length=250)
+    categories=forms.ChoiceField(choices=(('mobiles','mobiles'),('electronics','electronics'),('cars','cars'),('bikes','bikes'),('furniture','furniture')))
+    subcategories=forms.ChoiceField(choices=(('mobile','mobile'),('tablet','tablet'),('accessories','accessories')))
+    
 
 
 class Computer_sub_category(forms.Form):
@@ -47,10 +47,10 @@ class Computer_sub_category(forms.Form):
     name = forms.CharField(max_length=250)
     phone_number = forms.IntegerField()
     city = forms.CharField(max_length=250)
-    computer_item_sub_category= forms.ChoiceField(choices=(('sam','samsung'),('app','apple')))
-    computer_brand_name = forms.ChoiceField(choices=(('sam','samsung'),('app','apple')))
-    categories=forms.CharField(max_length=250)
-    subcategories=forms.CharField(max_length=250)
+    computer_item_sub_category= forms.CharField(max_length=250)
+    computer_brand_name = forms.CharField(max_length=250)
+    categories=forms.ChoiceField(choices=(('mobiles','mobiles'),('electronics','electronics'),('cars','cars'),('bikes','bikes'),('furniture','furniture')))
+    subcategories=forms.ChoiceField(choices=(('computer','computer'),('tvvideo','tvvideo'),('camera','camera'),('games','games'),('fridge','fridge'),('kitchen','kitchen')))
 
 class Tv_video_sub_category(forms.Form):
    title = forms.CharField(max_length=250)
@@ -60,9 +60,9 @@ class Tv_video_sub_category(forms.Form):
    name = forms.CharField(max_length=250)
    phone_number = forms.IntegerField()
    city = forms.CharField(max_length=250)
-   tv_video_sub_category=forms.ChoiceField(choices=(('sam','samsung'),('app','apple')))
-   categories=forms.CharField(max_length=250)
-   subcategories=forms.CharField(max_length=250)
+   tv_video_sub_category=forms.CharField(max_length=250)
+   categories=forms.ChoiceField(choices=(('mobiles','mobiles'),('electronics','electronics'),('cars','cars'),('bikes','bikes'),('furniture','furniture')))
+   subcategories=forms.ChoiceField(choices=(('computer','computer'),('tvvideo','tvvideo'),('camera','camera'),('games','games'),('fridge','fridge'),('kitchen','kitchen')))
 
 class Camera_sub_category(forms.Form):
     title = forms.CharField(max_length=250)
@@ -72,9 +72,9 @@ class Camera_sub_category(forms.Form):
     name = forms.CharField(max_length=250)
     phone_number = forms.IntegerField()
     city = forms.CharField(max_length=250)
-    camera_item_sub_category=forms.ChoiceField(choices=(('sam','samsung'),('app','apple')))
-    categories=forms.CharField(max_length=250)
-    subcategories=forms.CharField(max_length=250)
+    camera_item_sub_category=forms.CharField(max_length=250)
+    categories=forms.ChoiceField(choices=(('mobiles','mobiles'),('electronics','electronics'),('cars','cars'),('bikes','bikes'),('furniture','furniture')))
+    subcategories=forms.ChoiceField(choices=(('computer','computer'),('tvvideo','tvvideo'),('camera','camera'),('games','games'),('fridge','fridge'),('kitchen','kitchen')))
 
 class Games_sub_category(forms.Form):
     title = forms.CharField(max_length=250)
@@ -84,9 +84,9 @@ class Games_sub_category(forms.Form):
     name = forms.CharField(max_length=250)
     phone_number = forms.IntegerField()
     city = forms.CharField(max_length=250)
-    Games_item_sub_category=forms.ChoiceField(choices=(('sam','samsung'),('app','apple')))
-    categories=forms.CharField(max_length=250)
-    subcategories=forms.CharField(max_length=250)
+    Games_item_sub_category=forms.CharField(max_length=250)
+    categories=forms.ChoiceField(choices=(('mobiles','mobiles'),('electronics','electronics'),('cars','cars'),('bikes','bikes'),('furniture','furniture')))
+    subcategories=forms.ChoiceField(choices=(('computer','computer'),('tvvideo','tvvideo'),('camera','camera'),('games','games'),('fridge','fridge'),('kitchen','kitchen')))
 
 class Fridge_ac_washingmachine(forms.Form):
     title = forms.CharField(max_length=250)
@@ -96,9 +96,9 @@ class Fridge_ac_washingmachine(forms.Form):
     name = forms.CharField(max_length=250)
     phone_number = forms.IntegerField()
     city = forms.CharField(max_length=250)
-    Fridge_ac_washingmachine_sub_category=forms.ChoiceField(choices=(('sam','samsung'),('app','apple')))
-    categories=forms.CharField(max_length=250)
-    subcategories=forms.CharField(max_length=250)
+    Fridge_ac_washingmachine_sub_category=forms.CharField(max_length=250)
+    categories=forms.ChoiceField(choices=(('mobiles','mobiles'),('electronics','electronics'),('cars','cars'),('bikes','bikes'),('furniture','furniture')))
+    subcategories=forms.ChoiceField(choices=(('computer','computer'),('tvvideo','tvvideo'),('camera','camera'),('games','games'),('fridge','fridge'),('kitchen','kitchen')))
 
 class Kitchen_other(forms.Form):
     title = forms.CharField(max_length=250)
@@ -108,9 +108,9 @@ class Kitchen_other(forms.Form):
     name = forms.CharField(max_length=250)
     phone_number = forms.IntegerField()
     city = forms.CharField(max_length=250)
-    Kitchen_other_sub_category=forms.ChoiceField(choices=(('sam','samsung'),('app','apple')))
-    categories=forms.CharField(max_length=250)
-    subcategories=forms.CharField(max_length=250)
+    Kitchen_other_sub_category=forms.CharField(max_length=250)
+    categories=forms.ChoiceField(choices=(('mobiles','mobiles'),('electronics','electronics'),('cars','cars'),('bikes','bikes'),('furniture','furniture')))
+    subcategories=forms.ChoiceField(choices=(('computer','computer'),('tvvideo','tvvideo'),('camera','camera'),('games','games'),('fridge','fridge'),('kitchen','kitchen')))
 
 class Cars_sub_category_form(forms.Form):
     title = forms.CharField(max_length=250)
@@ -123,11 +123,10 @@ class Cars_sub_category_form(forms.Form):
     cars_brand_name = forms.CharField(max_length=250)
     cars_model =forms.CharField(max_length=250)
     kilometers_driven = forms.IntegerField()
-    year_manufacture = forms.DateField()
-    fuel = forms.CharField(max_length=250)
-    categories=forms.CharField(max_length=250)
-    subcategories=forms.CharField(max_length=250)
-    selector=forms.CharField(max_length=250)
+    year_manufacture = forms.IntegerField()
+    fuel = forms.ChoiceField(choices=(('petrol','petrol'),('diesel','diesel'),('gas','gas')))
+    categories=forms.ChoiceField(choices=(('mobiles','mobiles'),('electronics','electronics'),('cars','cars'),('bikes','bikes'),('furniture','furniture')))
+    subcategories=forms.ChoiceField(choices=(('car','car'),('commercial','commercial'),('other','other'),('spare_cars','spare_cars')))
 
 class Commercial_vehicle_sub_category(forms.Form):
     title = forms.CharField(max_length=250)
@@ -140,10 +139,9 @@ class Commercial_vehicle_sub_category(forms.Form):
     commercial_vehicle_brand_name = forms.ChoiceField(choices=(('sam','samsung'),('app','apple')))
     kilometers_driven = forms.IntegerField()
     year_manufacture = forms.DateField()
-    fuel = forms.CharField(max_length=250)
-    categories=forms.CharField(max_length=250)
-    subcategories=forms.CharField(max_length=250)
-
+    fuel = forms.ChoiceField(choices=(('petrol','petrol'),('diesel','diesel'),('gas','gas')))
+    categories=forms.ChoiceField(choices=(('mobiles','mobiles'),('electronics','electronics'),('cars','cars'),('bikes','bikes'),('furniture','furniture')))
+    subcategories=forms.ChoiceField(choices=(('car','car'),('commercial','commercial'),('other','other'),('spare_cars','spare_cars')))
 class Other_vehicles_sub_category(forms.Form):
     title = forms.CharField(max_length=250)
     price = forms.IntegerField()
@@ -155,9 +153,9 @@ class Other_vehicles_sub_category(forms.Form):
     Other_vehicles_brand_name = forms.CharField(max_length=250)
     kilometers_driven = forms.IntegerField()
     year_manufacture = forms.DateField()
-    fuel = forms.CharField(max_length=250)
-    categories=forms.CharField(max_length=250)
-    subcategories=forms.CharField(max_length=250)  
+    fuel = forms.ChoiceField(choices=(('petrol','petrol'),('diesel','diesel'),('gas','gas')))
+    categories=forms.ChoiceField(choices=(('mobiles','mobiles'),('electronics','electronics'),('cars','cars'),('bikes','bikes'),('furniture','furniture')))
+    subcategories=forms.ChoiceField(choices=(('car','car'),('commercial','commercial'),('other','other'),('spare_cars','spare_cars')))
 
 class Spare_parts_cars_sub_category(forms.Form):
     title = forms.CharField(max_length=250)
@@ -167,11 +165,10 @@ class Spare_parts_cars_sub_category(forms.Form):
     name = forms.CharField(max_length=250)
     phone_number = forms.IntegerField()
     city = forms.CharField(max_length=250)
-    spare_parts_category = forms.ChoiceField(choices=(('sam','samsung'),('app','apple')))
-    categories=forms.CharField(max_length=250)
-    subcategories=forms.CharField(max_length=250)
-
-class Motercycles_sub_category(forms.Form):
+    fuel = forms.ChoiceField(choices=(('petrol','petrol'),('diesel','diesel'),('gas','gas')))
+    categories=forms.ChoiceField(choices=(('mobiles','mobiles'),('electronics','electronics'),('cars','cars'),('bikes','bikes'),('furniture','furniture')))
+    subcategories=forms.ChoiceField(choices=(('car','car'),('commercial','commercial'),('other','other'),('spare_cars','spare_cars')))
+class Motorcycles_sub_category(forms.Form):
     title = forms.CharField(max_length=250)
     price = forms.IntegerField()
     description=forms.CharField(max_length=500)
@@ -179,13 +176,14 @@ class Motercycles_sub_category(forms.Form):
     name = forms.CharField(max_length=250)
     phone_number = forms.IntegerField()
     city = forms.CharField(max_length=250)
-    motorc_brand_name = forms.ChoiceField(choices=(('sam','samsung'),('app','apple')))
+    motorc_brand_name = forms.CharField(max_length=250)
     bikes_model = forms.CharField(max_length=250)
     kilometers_driven = forms.IntegerField()
     year_manufacture = forms.DateField()
-    fuel = forms.CharField(max_length=250)
-    categories=forms.CharField(max_length=250)
-    subcategories=forms.CharField(max_length=250)
+    fuel = forms.ChoiceField(choices=(('petrol','petrol'),('diesel','diesel'),('gas','gas')))
+    categories=forms.ChoiceField(choices=(('mobiles','mobiles'),('electronics','electronics'),('cars','cars'),('bikes','bikes'),('furniture','furniture')))
+    subcategories=forms.ChoiceField(choices=(('motorcycle','motorcycle'),('bicycle','bicycle'),('spare_bikes','spare_bikes')))
+
 
 class Bicycles_sub_category(forms.Form):
     title = forms.CharField(max_length=250)
@@ -195,9 +193,9 @@ class Bicycles_sub_category(forms.Form):
     name = forms.CharField(max_length=250)
     phone_number = forms.IntegerField()
     city = forms.CharField(max_length=250)
-    bicycle_brand_name = forms.ChoiceField(choices=(('sam','samsung'),('app','apple')))
-    categories=forms.CharField(max_length=250)
-    subcategories=forms.CharField(max_length=250)
+    bicycle_brand_name = forms.CharField(max_length=250)
+    categories=forms.ChoiceField(choices=(('mobiles','mobiles'),('electronics','electronics'),('cars','cars'),('bikes','bikes'),('furniture','furniture')))
+    subcategories=forms.ChoiceField(choices=(('motorcycle','motorcycle'),('bicycle','bicycle'),('spare_bikes','spare_bikes')))
 
 class Spare_parts_bikes_sub_category(forms.Form):
     title = forms.CharField(max_length=250)
@@ -208,17 +206,17 @@ class Spare_parts_bikes_sub_category(forms.Form):
     phone_number = forms.IntegerField()
     city = forms.CharField(max_length=250)
     spare_bikes_name = forms.CharField(max_length=250)
-    categories=forms.CharField(max_length=250)
-    subcategories=forms.CharField(max_length=250)
+    categories=forms.ChoiceField(choices=(('mobiles','mobiles'),('electronics','electronics'),('cars','cars'),('bikes','bikes'),('furniture','furniture')))
+    subcategories=forms.ChoiceField(choices=(('motorcycle','motorcycle'),('bicycle','bicycle'),('spare_bikes','spare_bikes')))
 
-class Furniture(forms.Form):
+class FurnitureForm(forms.Form):
     title = forms.CharField(max_length=250)
     price = forms.IntegerField()
-    furniture_type = forms.CharField(max_length=250)
     description=forms.CharField(max_length=500)
     photo = forms.ImageField()
     name = forms.CharField(max_length=250)
     phone_number = forms.IntegerField()
     city = forms.CharField(max_length=250)
-    categories=forms.CharField(max_length=250)
-    subcategories=forms.CharField(max_length=250)
+    furniture_type = forms.CharField(max_length=250)
+    categories=forms.ChoiceField(choices=(('mobiles','mobiles'),('electronics','electronics'),('cars','cars'),('bikes','bikes'),('furniture','furniture')))
+    subcategories=forms.ChoiceField(choices=(('furniture','furniture')))
