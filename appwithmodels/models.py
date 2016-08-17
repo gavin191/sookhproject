@@ -21,7 +21,7 @@ class Tablets_sub_category(Mobiles):
     tablets_brand_name =models.CharField(max_length=250)
 
 class Accessories_sub_category(Mobiles):
-    mobile_accessory_choice = models.CharField(max_length=250)
+    mobile_accessory_choice = models.CharField(max_length=250,default='mobile')
     accessory_brand_name =models.CharField(max_length=250)
 
 #electronics section
