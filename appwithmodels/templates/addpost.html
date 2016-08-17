@@ -323,37 +323,6 @@
 
 	});
 
-	 form.on('load',function(){
-		 console.log("in load");
-		 if(categories.val()=="mobiles"){
-			$('.nonmobiles').find('#id_subcategories').prop('disabled',true);
-			$('.nonmobiles').prop('hidden',true)
-			$('.mobile_subcategories').find('#id_subcategories').prop('disabled',false);
-			$('.mobile_subcategories').prop('hidden',false)
-		}else if(categories.val()=="electronics"){
-			$('.nonelectronics').find('#id_subcategories').prop('disabled',true);
-			$('.nonelectronics').prop('hidden',true)
-			$('.electronics_subcategories').find('#id_subcategories').prop('disabled',false);
-			$('.electronics_subcategories').prop('hidden',false)
-		}else if(categories.val()=="cars"){
-			$('.noncars').find('#id_subcategories').prop('disabled',true);
-			$('.noncars').prop('hidden',true)
-			$('.cars_subcategories').find('#id_subcategories').prop('disabled',false);
-			$('.cars_subcategories').prop('hidden',false)
-		}else if(categories.val()=="bikes"){
-			$('.nonbikes').find('#id_subcategories').prop('disabled',true);
-			$('.nonbikes').prop('hidden',true)
-			$('.bikes_subcategories').find('#id_subcategories').prop('disabled',false);
-			$('.bikes_subcategories').prop('hidden',false)
-		}
-		else if(categories.val()=="furniture"){
-			$('.nonfurniture').find('#id_subcategories').prop('disabled',true);
-			$('.nonfurniture').prop('hidden',true)
-			$('.furniture_subcategories').find('#id_subcategories').prop('disabled',false);
-			$('.furniture_subcategories').prop('hidden',false)
-		}
-
-	 });
 
 
 
