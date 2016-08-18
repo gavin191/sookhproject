@@ -28,7 +28,7 @@
 
  <div class="mobile_subcategories nonelectronics noncars nonbikes nonfurniture "   > 	
 <label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label>
-<select id="id_subcategories" name="subcategories"  >
+<select id="id_subcategoriesmobile" class="subcategoryclass" name="subcategories"  >
 	<option value="mobiles">mobiles</option>
 	<option value="tablets">tablets</option>
 	<option value="accessories">accessories</option>
@@ -38,7 +38,7 @@
 
  <div class="electronics_subcategories nonmobiles noncars nonbikes nonfurniture" hidden="true"  > 	
 <label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label>
-<select id="id_subcategories" name="subcategories" disabled="true"  >
+<select id="id_subcategorieselectronics" class="subcategoryclass" name="subcategories" disabled="true"  >
 	<option value="computer">computer</option>
 	<option value="tv_video">tv_video</option>
 	<option value="camera">camera</option>
@@ -51,7 +51,7 @@
 
  <div class="cars_subcategories nonmobiles nonelectronics nonbikes nonfurniture" hidden="true" > 	
 <label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label>
-<select id="id_subcategories" name="subcategories" disabled="true"  >
+<select id="id_subcategoriescars" class="subcategoryclass" name="subcategories" disabled="true"  >
 	<option value="car">car</option>
 	<option value="commercial">commercial</option>
 	<option value="other">other</option>
@@ -62,7 +62,7 @@
 
  <div class="bikes_subcategories nonmobiles nonelectronics noncars nonfurniture" hidden="true" > 	
 <label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label>
-<select id="id_subcategories" name="subcategories" disabled="true"  >
+<select id="id_subcategoriesbikes" class="subcategoryclass" name="subcategories" disabled="true"  >
 	<option value="motorcycle">motorcycle</option>
 	<option value="bicycle">bicycle</option>
 	<option value="spare_bikes">spare parts</option>
@@ -72,7 +72,7 @@
 
  <div class="furniture_subcategories nonmobiles nonelectronics noncars nonbikes" hidden="true" > 	
 <label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label>
-<select id="id_subcategories" name="subcategories" disabled="true"  >
+<select id="id_subcategoriesfurniture" class="subcategoryclass" name="subcategories" disabled="true"  >
 	<option value="furniture">furniture</option>
 
 </select>
@@ -80,7 +80,8 @@
 </div>
 
 <!-- ------------------MOBILES DIV------------------------------------------------------------ -->
-<div id='mobiles_div' hidden='true'>
+<div class='mobiles_div nonelectronicsdiv noncarsdiv nonbikesdiv nonfurniturediv 
+            nontablets nonaccessories' hidden='true'>
 <label for="id_mobile_brand_name">Mobile brand name:</label>
 <input id="id_mobile_brand_name" maxlength="250" name="mobile_brand_name" type="text" disabled="true"  required />
 </br>
@@ -89,14 +90,16 @@
 
 
 <!-- ------------------TABLETS DIV------------------------------------------------------------ -->
-<div id='tablets_div' hidden='true'>
+<div class='tablets_div nonelectronicsdiv noncarsdiv nonbikesdiv nonfurniturediv 
+           nonmobile nonaccessories ' hidden='true'>
 <label for="id_tablets_brand_name">Tablet brand name:</label>
 <input id="id_tablets_brand_name" maxlength="250" name="tablets_brand_name" type="text" disabled="true"  required />
 </br>
 </div>
 
 <!-- ------------------ACESSORIES DIV------------------------------------------------------------ -->
-<div id='accessories_div' hidden='true'>
+<div class='accessories_div nonelectronicsdiv noncarsdiv nonbikesdiv nonfurniturediv 
+			nonmobile nontablets' hidden='true'>
 <label for="id_mobile_accessory_choice_mobile">Mobile brand na:</label>
   <input type="radio" id="id_mobile_accessory_choice_mobile" name="mobile_accessory_choice_mobile" value="mobile" disabled="true"  checked> mobile<br>
   <input type="radio" id="id_mobile_accessory_choice_mobile" name="mobile_accessory_choice_mobile" value="tablet" disabled="true"  > tablet<br>
@@ -109,7 +112,8 @@
 
 <!-- ------------------COMPUTER DIV------------------------------------------------------------ -->
 
-<div id='computer_div' hidden='true'>
+<div class='computer_div nonmobilesdiv noncarsdiv nonbikesdiv nonfurniturediv
+ 			nontv noncamera nongames nonfridge nonkitchen ' hidden='true'>
 <label for="id_computer_item_sub_category">computer item:</label>
 <input id="id_computer_item_sub_category" maxlength="250" name="computer_item_sub_category" type="text" disabled="true"  required />
 </br>
@@ -120,33 +124,38 @@
 
 <!-- ------------------TV VIDEO DIV------------------------------------------------------------ -->
 
-<div id='tv_div' hidden='true'>
+<div class='tv_div nonmobilesdiv noncarsdiv nonbikesdiv nonfurniturediv
+             noncomputer noncamera nongames nonfridge nonkitchen ' hidden='true'>
 <label for="id_tv_video_sub_category">tv_video_sub_category:</label>
 <input id="id_tv_video_sub_category" maxlength="250" name="tv_video_sub_category" type="text" disabled="true"  required />
 </br>
 </div>
 <!-- ------------------CAMERA DIV------------------------------------------------------------ -->
-<div id='camera_div' hidden='true'>
+<div class='camera_div nonmobilesdiv noncarsdiv nonbikesdiv nonfurniturediv
+            nontv noncomputer nongames nonfridge nonkitchen' hidden='true'>
 <label for="id_camera_item_sub_category">camera_item_sub_category:</label>
 <input id="id_camera_item_sub_category" maxlength="250" name="camera_item_sub_category" type="text" disabled="true"  required />
 </br>
 </div>
 <!-- ------------------GAMES DIV------------------------------------------------------------ -->
-<div id='games_div' hidden='true'>
+<div class='games_div nonmobilesdiv noncarsdiv nonbikesdiv nonfurniturediv
+			nontv noncomputer noncamera nonfridge nonkitchen' hidden='true'>
 <label for="id_Games_item_sub_category">Games_item_sub_category:</label>
 <input id="id_Games_item_sub_category" maxlength="250" name="Games_item_sub_category" type="text" disabled="true"  required />
 </br>
 </div>
 
 <!-- ------------------FRIDGE DIV------------------------------------------------------------ -->
-<div id='fridge_div' hidden='true'>
+<div class='fridge_div nonmobilesdiv noncarsdiv nonbikesdiv nonfurniturediv
+            nontv noncomputer noncamera nongames nonkitchen' hidden='true'>
 <label for="id_Fridge_ac_washingmachine_sub_category">Fridge_ac_washingmachine_sub_category:</label>
 <input id="id_Fridge_ac_washingmachine_sub_category" maxlength="250" name="Fridge_ac_washingmachine_sub_category" disabled="true"  type="text" required />
 </br>
 </div>
 
 <!-- ------------------KITCHEN DIV------------------------------------------------------------ -->
-<div id='kitchen_div' hidden='true'>
+<div class='kitchen_div nonmobilesdiv noncarsdiv nonbikesdiv nonfurniturediv
+             nontv noncomputer noncamera nongames nonfridge' hidden='true'>
 <label for="id_Kitchen_other_sub_category">Kitchen_other_sub_category:</label>
 <input id="id_Kitchen_other_sub_category" maxlength="250" name="Kitchen_other_sub_category" disabled="true"  type="text" required />
 </br>
@@ -154,7 +163,7 @@
 
 <!-- ------------------CARS common exept spare DIV------------------------------------------------------------ -->
  
- <div class = 'cars_common' hidden="true" > 	
+ <div class = 'cars_common nonmobilesdiv nonelectronicsdiv nonbikesdiv nonfurniturediv' hidden="true" > 	
 <label for="id_kilometers_driven">Kilometers driven:</label>
 <input id="id_kilometers_driven" name="kilometers_driven" type="number" disabled="true"  required />
 </br>
@@ -176,7 +185,8 @@
 
 <!-- ------------------CARS DIV------------------------------------------------------------ -->
 
-<div class = 'cars_subdiv' hidden="true" > 	
+<div class = 'cars_subdiv nonmobilesdiv nonelectronicsdiv nonbikesdiv nonfurniturediv 
+              noncommercial nonother nonsparecars   ' hidden="true" > 	
 <label for="id_cars_brand_name">Cars brand name:</label>
 <input id="id_cars_brand_name" maxlength="250" name="cars_brand_name" type="text" disabled="true"  required />
 </br>
@@ -188,25 +198,29 @@
 
 
  <!-- ------------------COMMERCIAL DIV------------------------------------------------------------ -->
-<div id='commercial_div' hidden='true'>
+<div class='commercial_div nonmobilesdiv nonelectronicsdiv nonbikesdiv nonfurniturediv 
+              noncar nonother nonsparecars ' hidden='true'>
 <label for="id_commercial_vehicle_brand_name">commercial_vehicle_brand_name:</label>
 <input id="id_commercial_vehicle_brand_name" maxlength="250" name="commercial_vehicle_brand_name" type="text" disabled="true"  required />
 </br>
 </div>
 <!-- ------------------OTHER VEHICLES DIV------------------------------------------------------------ -->
-<div id='other_div' hidden='true'>
+<div class='other_div nonmobilesdiv nonelectronicsdiv nonbikesdiv nonfurniturediv
+            noncar noncommercial nonsparecars' hidden='true'>
 <label for="id_Other_vehicles_brand_name">Other_vehicles_brand_name:</label>
 <input id="id_Other_vehicles_brand_name" maxlength="250" name="Other_vehicles_brand_name" type="text" disabled="true"  required />
 </br>
 </div>
 <!-- ------------------SPARE CAR DIV------------------------------------------------------------ -->
-<div id='spare_cars_div' hidden='true'>
+<div class='spare_cars_div nonmobilesdiv nonelectronicsdiv nonbikesdiv nonfurniturediv
+            noncar noncommercial nonother' hidden='true'>
 <label for="id_spare_parts_category">spare_parts_category:</label>
 <input id="id_spare_parts_category" maxlength="250" name="spare_parts_category" type="text" disabled="true"  required />
 </br>
 </div>
 <!-- ------------------MOTERCYCLE DIV------------------------------------------------------------ -->
-<div id='motorcycle_div' hidden='true'>
+<div class='motorcycle_div nonmobilesdiv nonelectronicsdiv noncarsdiv nonfurniturediv
+            nonbicycle nonsparebikes' hidden='true'>
 <label for="id_motorcycle_brand_name">motorcycle_brand_name:</label>
 <input id="id_motorcycle_brand_name" maxlength="250" name="motorcycle_brand_name" type="text" disabled="true"  required />
 <label for="id_bikes_model">bikes_model:</label>
@@ -214,13 +228,15 @@
 </br>
 </div>
 <!-- ------------------BICYCLE DIV------------------------------------------------------------ -->
-<div id='bicycle_div' hidden='true'>
+<div class='bicycle_div nonmobilesdiv nonelectronicsdiv noncarsdiv nonfurniturediv
+            nonmotorcycle nonsparebikes' hidden='true'>
 <label for="id_bicycle_brand_name">bicycle_brand_name:</label>
 <input id="id_bicycle_brand_name" maxlength="250" name="bicycle_brand_name" type="text" disabled="true"  required />
 </br>
 </div>
 <!-- ------------------SPARE BIKES DIV------------------------------------------------------------ -->
-<div id='spare_bikes_div' hidden='true'>
+<div class='spare_bikes_div nonmobilesdiv nonelectronicsdiv noncarsdiv nonfurniturediv
+            nonmotorcycle nonbicycle' hidden='true'>
 <label for="id_spare_bikes_name">spare_bikes_name</label>
 <input id="id_spare_bikes_name" maxlength="250" name="spare_bikes_name" type="text" disabled="true"  required />
 </br>
@@ -229,7 +245,7 @@
 <!-- ------------------FURNITURE  DIV------------------------------------------------------------ -->
 
 
-<div id='furniture_div' hidden='true'>
+<div class='furniture_div nonmobilesdiv nonelectronicsdiv noncarsdiv nonbikesdiv' hidden='true'>
 <label for="id_furniture_type">Furniture type:</label>
 <input id="id_furniture_type" maxlength="250" name="furniture_type" type="text" disabled="true"  required />
 </br>
@@ -293,68 +309,241 @@
 	 var furniture=$('#id_furniture_type');
     
 		categories.change(function(){
+			console.log('categories=',categories)
 		if(categories.val()=="mobiles"){
-			$('.nonmobiles').find('#id_subcategories').prop('disabled',true);
+			$('.nonmobiles').find('.subcategoryclass').prop('disabled',true);
 			$('.nonmobiles').prop('hidden',true)
-			$('.mobile_subcategories').find('#id_subcategories').prop('disabled',false);
+			$('.mobile_subcategories').find('.subcategoryclass').prop('disabled',false);
 			$('.mobile_subcategories').prop('hidden',false)
 		}else if(categories.val()=="electronics"){
-			$('.nonelectronics').find('#id_subcategories').prop('disabled',true);
+			$('.nonelectronics').find('.subcategoryclass').prop('disabled',true);
 			$('.nonelectronics').prop('hidden',true)
-			$('.electronics_subcategories').find('#id_subcategories').prop('disabled',false);
+			$('.electronics_subcategories').find('.subcategoryclass').prop('disabled',false);
 			$('.electronics_subcategories').prop('hidden',false)
 		}else if(categories.val()=="cars"){
-			$('.noncars').find('#id_subcategories').prop('disabled',true);
+			$('.noncars').find('.subcategoryclass').prop('disabled',true);
 			$('.noncars').prop('hidden',true)
-			$('.cars_subcategories').find('#id_subcategories').prop('disabled',false);
+			$('.cars_subcategories').find('.subcategoryclass').prop('disabled',false);
 			$('.cars_subcategories').prop('hidden',false)
 		}else if(categories.val()=="bikes"){
-			$('.nonbikes').find('#id_subcategories').prop('disabled',true);
+			$('.nonbikes').find('.subcategoryclass, input ').prop('disabled',true);
 			$('.nonbikes').prop('hidden',true)
-			$('.bikes_subcategories').find('#id_subcategories').prop('disabled',false);
+			$('.bikes_subcategories').find('.subcategoryclass').prop('disabled',false);
 			$('.bikes_subcategories').prop('hidden',false)
 		}
 		else if(categories.val()=="furniture"){
-			$('.nonfurniture').find('#id_subcategories').prop('disabled',true);
+			$('.nonfurniture').find('.subcategoryclass, input ').prop('disabled',true);
 			$('.nonfurniture').prop('hidden',true)
-			$('.furniture_subcategories').find('#id_subcategories').prop('disabled',false);
+			$('.furniture_subcategories').find('.subcategoryclass').prop('disabled',false);
 			$('.furniture_subcategories').prop('hidden',false)
 		}
 
 	});
 
-
-
-
-
-
-
-
-
-
-	/*
-categories.change(function(){
-	if(categories.val()=="furniture"){
-		console.log('in function categories');
-		$('#id_furniture_type').prop('disabled',false);
-		$(".cars_subdiv").find('input').prop("disabled", true);
-		$(".cars_subdiv").find('select').prop("disabled", true);
-		$('.cars_subdiv').attr('hidden','hidden');
-		
-
-
-}else{
-	   $(".cars_subdiv").find('input').prop("disabled", false);
-	   $('.cars_subdiv').prop('hidden',false);
-	   $("#id_furniture_type").prop("disabled", true);
-	   $('#furniture_div').prop('hidden',true);
-	   $(".cars_subdiv").find('select').prop("disabled", false);
-		console.log($('#id_furniture_type'));
-        
-}
-});
+  /* $( '.subcategoryclass' ).ready(function(){
+    console.log("sub is ready");
+	if($('#id_subcategoriesmobiles').val()=="mobiles"){
+			$('.nonmobile').find('input').prop('disabled',true);
+			$('.nonmobile').prop('hidden',true);
+			$('.mobiles_div').find('input').prop('disabled',false);
+			$('.mobiles_div').prop('hidden',false);
+	}else if($('#id_subcategoriesmobiles').val()=="tablets"){
+			$('.nontablets').find('input').prop('disabled',true);
+			$('.nontablets').prop('hidden',true);
+			$('.tablets_div').find('input').prop('disabled',false);
+			$('.tablets_div').prop('hidden',false);
+	}
+	else if($('#id_subcategoriesmobiles').val()=="accessories"){
+			$('.nonaccessories').find('input').prop('disabled',true);
+			$('.nonaccessories').prop('hidden',true);
+			$('.accessories_div').find('input').prop('disabled',false);
+			$('.accessories_div').prop('hidden',false);
+	}
+	 if($('#id_subcategorieselectronics').val()=="computer"){
+			$('.noncomputer').find('input').prop('disabled',true);
+			$('.noncomputer').prop('hidden',true);
+			$('.computer_div').find('input').prop('disabled',false);
+			$('.computer_div').prop('hidden',false);
+	}
+		else if($('#id_subcategorieselectronics').val()=="tv_video"){
+			$('.nontv').find('input').prop('disabled',true);
+			$('.nontv').prop('hidden',true);
+			$('.tv_div').find('input').prop('disabled',false);
+			$('.tv_div').prop('hidden',false);
+	}
+		else if($('#id_subcategorieselectronics').val()=="camera"){
+			$('.noncamera').find('input').prop('disabled',true);
+			$('.noncamera').prop('hidden',true);
+			$('.camera_div').find('input').prop('disabled',false);
+			$('.camera_div').prop('hidden',false);
+	}
+		else if($('#id_subcategorieselectronics').val()=="games"){
+			$('.nongames').find('input').prop('disabled',true);
+			$('.nongames').prop('hidden',true);
+			$('.games_div').find('input').prop('disabled',false);
+			$('.games_div').prop('hidden',false);
+	}
+		else if($('#id_subcategorieselectronics').val()=="fridge"){
+			$('.nonfridge').find('input').prop('disabled',true);
+			$('.nonfridge').prop('hidden',true);
+			$('.fridge_div').find('input').prop('disabled',false);
+			$('.fridge_div').prop('hidden',false);
+	}
+		else if($('#id_subcategorieselectronics').val()=="kitchen"){
+			$('.nonkitchen').find('input').prop('disabled',true);
+			$('.nonkitchen').prop('hidden',true);
+			$('.kitchen_div').find('input').prop('disabled',false);
+			$('.kitchen_div').prop('hidden',false);
+	}
+		 if($('#id_subcategoriescars').val()=="car"){
+			$('.noncar').find('input').prop('disabled',true);
+			$('.noncar').prop('hidden',true);
+			$('.cars_div').find('input').prop('disabled',false);
+			$('.cars_div').prop('hidden',false);
+	}
+		else if($('#id_subcategoriescars').val()=="commercial"){
+			$('.noncommercial').find('input').prop('disabled',true);
+			$('.noncommercial').prop('hidden',true);
+			$('.commercial_div').find('input').prop('disabled',false);
+			$('.commercial_div').prop('hidden',false);
+	}
+		else if($('#id_subcategoriescars').val()=="other"){
+			$('.nonother').find('input').prop('disabled',true);
+			$('.nonother').prop('hidden',true);
+			$('.other_div').find('input').prop('disabled',false);
+			$('.other_div').prop('hidden',false);
+	}
+		else if($('#id_subcategoriescars').val()=="spare_cars"){
+			$('.nonsparecars').find('input').prop('disabled',true);
+			$('.nonsparecars').prop('hidden',true);
+			$('.spare_cars_div').find('input').prop('disabled',false);
+			$('.spare_cars_div').prop('hidden',false);
+	}
+		if($('#id_subcategoriesbikes').val()=="motorcycle"){
+			$('.nonmotorcycle').find('input').prop('disabled',true);
+			$('.nonmotorcycle').prop('hidden',true);
+			$('.motorcycle_div').find('input').prop('disabled',false);
+			$('.motorcycle_div').prop('hidden',false);
+	}
+			else if($('#id_subcategoriesbikes').val()=="bicycle"){
+			$('.nonbicycle').find('input').prop('disabled',true);
+			$('.nonbicycle').prop('hidden',true);
+			$('.bicycle_div').find('input').prop('disabled',false);
+			$('.bicycle_div').prop('hidden',false);
+	}
+			 if($('#id_subcategoriesfurniture').val()=="spare_bikes"){
+			$('.nonspare_bikes').find('input').prop('disabled',true);
+			$('.nonspare_bikes').prop('hidden',true);
+			$('.spare_bikes_div').find('input').prop('disabled',false);
+			$('.spare_bikes_div').prop('hidden',false);
+	}
+	
+   });
 */
+      $( '.subcategoryclass' ).change(function(){
+    console.log('in change');
+	if($('#id_subcategoriesmobiles').val()=="mobiles"){
+			$('.nonmobilediv').find('input').prop('disabled',true);
+			$('.nonmobilediv').prop('hidden',true);
+			$('.mobiles_div').find('input').prop('disabled',false);
+			$('.mobiles_div').prop('hidden',false);
+	}else if($('#id_subcategoriesmobiles').val()=="tablets"){
+			$('.nontabletsdiv').find('input').prop('disabled',true);
+			$('.nontabletsdiv').prop('hidden',true);
+			$('.tablets_div').find('input').prop('disabled',false);
+			$('.tablets_div').prop('hidden',false);
+	}
+	else if($('#id_subcategoriesmobiles').val()=="accessories"){
+			$('.nonaccessories').find('input').prop('disabled',true);
+			$('.nonaccessories').prop('hidden',true);
+			$('.accessories_div').find('input').prop('disabled',false);
+			$('.accessories_div').prop('hidden',false);
+	}
+	else if($('#id_subcategorieselectronics').val()=="computer"){
+			$('.noncomputer').find('input').prop('disabled',true);
+			$('.noncomputer').prop('hidden',true);
+			$('.computer_div').find('input').prop('disabled',false);
+			$('.computer_div').prop('hidden',false);
+	}
+		else if($('#id_subcategorieselectronics').val()=="tv_video"){
+			$('.nontv').find('input').prop('disabled',true);
+			$('.nontv').prop('hidden',true);
+			$('.tv_div').find('input').prop('disabled',false);
+			$('.tv_div').prop('hidden',false);
+	}
+		else if($('#id_subcategorieselectronics').val()=="camera"){
+			$('.noncamera').find('input').prop('disabled',true);
+			$('.noncamera').prop('hidden',true);
+			$('.camera_div').find('input').prop('disabled',false);
+			$('.camera_div').prop('hidden',false);
+	}
+		else if($('#id_subcategorieselectronics').val()=="games"){
+			$('.nongames').find('input').prop('disabled',true);
+			$('.nongames').prop('hidden',true);
+			$('.games_div').find('input').prop('disabled',false);
+			$('.games_div').prop('hidden',false);
+	}
+		else if($('#id_subcategorieselectronics').val()=="fridge"){
+			$('.nonfridge').find('input').prop('disabled',true);
+			$('.nonfridge').prop('hidden',true);
+			$('.fridge_div').find('input').prop('disabled',false);
+			$('.fridge_div').prop('hidden',false);
+	}
+		else if($('#id_subcategorieselectronics').val()=="kitchen"){
+			$('.nonkitchen').find('input').prop('disabled',true);
+			$('.nonkitchen').prop('hidden',true);
+			$('.kitchen_div').find('input').prop('disabled',false);
+			$('.kitchen_div').prop('hidden',false);
+	}
+	else	 if($('#id_subcategoriescars').val()=="car"){
+			$('.noncar').find('input').prop('disabled',true);
+			$('.noncar').prop('hidden',true);
+			$('.cars_div').find('input').prop('disabled',false);
+			$('.cars_div').prop('hidden',false);
+	}
+		else if($('#id_subcategoriescars').val()=="commercial"){
+			$('.noncommercial').find('input').prop('disabled',true);
+			$('.noncommercial').prop('hidden',true);
+			$('.commercial_div').find('input').prop('disabled',false);
+			$('.commercial_div').prop('hidden',false);
+	}
+		else if($('#id_subcategoriescars').val()=="other"){
+			$('.nonother').find('input').prop('disabled',true);
+			$('.nonother').prop('hidden',true);
+			$('.other_div').find('input').prop('disabled',false);
+			$('.other_div').prop('hidden',false);
+	}
+		else if($('#id_subcategoriescars').val()=="spare_cars"){
+			$('.nonsparecars').find('input').prop('disabled',true);
+			$('.nonsparecars').prop('hidden',true);
+			$('.spare_cars_div').find('input').prop('disabled',false);
+			$('.spare_cars_div').prop('hidden',false);
+	}
+	else	if($('#id_subcategoriesbikes').val()=="motorcycle"){
+			$('.nonmotorcycle').find('input').prop('disabled',true);
+			$('.nonmotorcycle').prop('hidden',true);
+			$('.motorcycle_div').find('input').prop('disabled',false);
+			$('.motorcycle_div').prop('hidden',false);
+	}
+			else if($('#id_subcategoriesbikes').val()=="bicycle"){
+			$('.nonbicycle').find('input').prop('disabled',true);
+			$('.nonbicycle').prop('hidden',true);
+			$('.bicycle_div').find('input').prop('disabled',false);
+			$('.bicycle_div').prop('hidden',false);
+	}
+		else	 if($('#id_subcategoriesfurniture').val()=="spare_bikes"){
+			$('.nonspare_bikes').find('input').prop('disabled',true);
+			$('.nonspare_bikes').prop('hidden',true);
+			$('.spare_bikes_div').find('input').prop('disabled',false);
+			$('.spare_bikes_div').prop('hidden',false);
+	}
+			
+   });
 
+   form.submit(function(){
+      $( '.subcategoryclass' ).prop('id','subcategories')
+   });
+   
  </script>
 
 {% endblock %}
