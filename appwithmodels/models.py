@@ -10,6 +10,8 @@ class Mobiles(models.Model):
     name = models.CharField(max_length=250)
     phone_number = models.IntegerField()
     city = models.CharField(max_length=250)
+    subcategories = models.CharField(max_length=250,default='mobiles')
+    categories = models.CharField(max_length=250,default='mobiles')    
 
     class  Meta:
         abstract = True
@@ -33,6 +35,8 @@ class Electronics(models.Model):
     name = models.CharField(max_length=250)
     phone_number = models.IntegerField()
     city = models.CharField(max_length=250)
+    subcategories = models.CharField(max_length=250,default='computer')
+    categories = models.CharField(max_length=250,default='electronics') 
 
     class  Meta:
         abstract = True
@@ -82,13 +86,13 @@ class Cars_sub_category(Cars):
 class Commercial_vehicle_sub_category(Cars):
     commercial_vehicle_brand_name = models.CharField(max_length=250)
     kilometers_driven = models.IntegerField()
-    year_manufacture = models.DateField()
+    year_manufacture = models.IntegerField()
     fuel = models.CharField(max_length=250)
 
 class Other_vehicles_sub_category(Cars):
     Other_vehicles_brand_name = models.CharField(max_length=250)
     kilometers_driven = models.IntegerField()
-    year_manufacture = models.DateField()
+    year_manufacture = models.IntegerField()
     fuel = models.CharField(max_length=250)    
 
 class Spare_parts_cars_sub_category(Cars):
@@ -102,6 +106,8 @@ class Bikes(models.Model):
     name = models.CharField(max_length=250)
     phone_number = models.IntegerField()
     city = models.CharField(max_length=250)
+    subcategories = models.CharField(max_length=250,default='bikes')
+    categories = models.CharField(max_length=250,default='motorcycle') 
 
     class  Meta:
         abstract = True
@@ -111,7 +117,7 @@ class Motorcycles_sub_category(Bikes):
     motorcycle_brand_name = models.CharField(max_length=250)
     bikes_model = models.CharField(max_length=250)
     kilometers_driven = models.IntegerField()
-    year_manufacture = models.DateField()
+    year_manufacture = models.IntegerField()
     fuel = models.CharField(max_length=250)
 
 class Bicycles_sub_category(Bikes):

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block   content %}
+{% load static %}
+    
+        <!-- List of uploaded documents -->
+        {% if documents %}
+            <div class="col-sm-12 col-sm-offset-2 text" >
+                {% for document in documents %}
+                    <span><img src="{{ document.photo.url }}" width="100px" height="100px" />
+                    
+                    </span>
+                {% endfor %}
+          
+        {% else %}
+            <p>No documents.</p>
+        {% endif %}
+</div>  
+<div>
+{% endblock %}
