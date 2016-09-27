@@ -24,6 +24,7 @@ SECRET_KEY = 'i!=mh0h@lybatvb(d00nt%w_50kms83wj4pey=jg+hq4ywe4l9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+USE_TZ = True
 
 ALLOWED_HOSTS = []
 

@@ -11,7 +11,8 @@ class Mobiles(models.Model):
     phone_number = models.IntegerField()
     city = models.CharField(max_length=250)
     subcategories = models.CharField(max_length=250,default='mobiles')
-    categories = models.CharField(max_length=250,default='mobiles')    
+    categories = models.CharField(max_length=250,default='mobiles')
+       
 
     class  Meta:
         abstract = True

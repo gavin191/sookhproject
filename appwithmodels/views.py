@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_protect
 from appwithmodels.forms import Cars_sub_category_form,Furniture_Form,Mobile_sub_MobileForm,Mobile_sub_tablets_form,Mobile_sub_accessories_form,Computer_sub_category_form,Tv_video_sub_category_form,Camera_sub_category_form,Games_sub_category_form,Fridge_ac_washingmachine_form,Kitchen_other_form,Cars_sub_category_form,Commercial_vehicle_sub_category_form,Other_vehicles_sub_category_form,Spare_parts_cars_sub_category_form,Motorcycles_sub_category_form,Bicycles_sub_category_form,Spare_parts_bikes_sub_category_form,Furniture_Form
 from django.core.urlresolvers import reverse
 from appwithmodels.models import Cars_sub_category,Furniture,Mobiles_sub_category,Tablets_sub_category,Accessories_sub_category,Computer_sub_category,Tv_video_sub_category,Camera_sub_category,Games_sub_category,Fridge_ac_washingmachine,Kitchen_other,Cars_sub_category,Commercial_vehicle_sub_category,Other_vehicles_sub_category,Spare_parts_cars_sub_category,Motorcycles_sub_category,Bicycles_sub_category,Spare_parts_bikes_sub_category,Furniture
-
+from django.utils import timezone
 
 # Create your views here.
 
@@ -24,6 +24,8 @@ def electronics_list(request):
     '''function in view    '''
     documents={}
     documents = Electronics.objects.all()
+    if(documents==None):
+        print("no objects")
 
     # Render list page with the documents and the form
     return render(
@@ -31,6 +33,20 @@ def electronics_list(request):
         'displaydocuments.html',
         {'documents': documents,}
     )
+
+def cars_list(request):
+    '''function to display cars '''
+    documents={}
+    documents = Cars_sub_category.objects.all()
+
+    # Render list page with the documents and the form
+    return render(
+        request,
+        'displaydocuments.html',
+        {'documents': documents,}
+    )
+
+
 
 def home(request):
     return render(request,'home.html')
