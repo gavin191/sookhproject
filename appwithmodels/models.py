@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 #modile category section
 class Mobiles(models.Model):

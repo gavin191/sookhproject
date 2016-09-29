@@ -5,46 +5,412 @@ from appwithmodels.forms import Cars_sub_category_form,Furniture_Form,Mobile_sub
 from django.core.urlresolvers import reverse
 from appwithmodels.models import Cars_sub_category,Furniture,Mobiles_sub_category,Tablets_sub_category,Accessories_sub_category,Computer_sub_category,Tv_video_sub_category,Camera_sub_category,Games_sub_category,Fridge_ac_washingmachine,Kitchen_other,Cars_sub_category,Commercial_vehicle_sub_category,Other_vehicles_sub_category,Spare_parts_cars_sub_category,Motorcycles_sub_category,Bicycles_sub_category,Spare_parts_bikes_sub_category,Furniture
 from django.utils import timezone
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
+def ip_list(request):
+    a=get_ip(request)
+    print("ip is" + a)
 
-def mobile_list(request):
+
+
+
+
+def Mobiles_list(request):
     '''function in view    '''
     documents={}
     documents = Mobiles_sub_category.objects.all()
+    paginator = Paginator(documents, 5) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        documentspage = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documentspage = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documentspage = paginator.page(paginator.num_pages)
 
     # Render list page with the documents and the form
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documents,}
+        {'documents': documentspage,}
     )
 
-def electronics_list(request):
+def Tablets_list(request):
     '''function in view    '''
     documents={}
-    documents = Electronics.objects.all()
-    if(documents==None):
-        print("no objects")
+    documents = Tablets_sub_category.objects.all()
+    paginator = Paginator(documents, 5) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        documentspage = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documentspage = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documentspage = paginator.page(paginator.num_pages)
 
     # Render list page with the documents and the form
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documents,}
+        {'documents': documentspage,}
     )
+
+def Accessories_list(request):
+    '''function in view    '''
+    documents={}
+    documents = Tablets_sub_category.objects.all()
+    paginator = Paginator(documents, 5) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        documentspage = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documentspage = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documentspage = paginator.page(paginator.num_pages)
+
+    # Render list page with the documents and the form
+    return render(
+        request,
+        'displaydocuments.html',
+        {'documents': documentspage,}
+    )
+
+def Computer_list(request):
+    '''function in view    '''
+    documents={}
+    documents = Computer_sub_category.objects.all()
+    paginator = Paginator(documents, 5) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        documentspage = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documentspage = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documentspage = paginator.page(paginator.num_pages)
+
+    # Render list page with the documents and the form
+    return render(
+        request,
+        'displaydocuments.html',
+        {'documents': documentspage,}
+    )
+
+def Tv_video_list(request):
+    '''function in view    '''
+    documents={}
+    documents = Tv_video_sub_category.objects.all()
+    paginator = Paginator(documents, 5) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        documentspage = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documentspage = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documentspage = paginator.page(paginator.num_pages)
+
+    # Render list page with the documents and the form
+    return render(
+        request,
+        'displaydocuments.html',
+        {'documents': documentspage,}
+    )
+
+def Camera_list(request):
+    '''function in view    '''
+    documents={}
+    documents = Camera_sub_category.objects.all()
+    paginator = Paginator(documents, 5) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        documentspage = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documentspage = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documentspage = paginator.page(paginator.num_pages)
+
+    # Render list page with the documents and the form
+    return render(
+        request,
+        'displaydocuments.html',
+        {'documents': documentspage,}
+    )
+
+def Games_list(request):
+    '''function in view    '''
+    documents={}
+    documents = Games_sub_category.objects.all()
+    paginator = Paginator(documents, 5) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        documentspage = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documentspage = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documentspage = paginator.page(paginator.num_pages)
+
+    # Render list page with the documents and the form
+    return render(
+        request,
+        'displaydocuments.html',
+        {'documents': documentspage,}
+    )
+
+def Fridge_ac_washingmachine_list(request):
+    '''function in view    '''
+    documents={}
+    documents = Fridge_ac_washingmachine.objects.all()
+    paginator = Paginator(documents, 5) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        documentspage = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documentspage = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documentspage = paginator.page(paginator.num_pages)
+
+    # Render list page with the documents and the form
+    return render(
+        request,
+        'displaydocuments.html',
+        {'documents': documentspage,}
+    )
+
+def Kitchen_other_list(request):
+    '''function in view    '''
+    documents={}
+    documents = Kitchen_other.objects.all()
+    paginator = Paginator(documents, 5) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        documentspage = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documentspage = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documentspage = paginator.page(paginator.num_pages)
+
+    # Render list page with the documents and the form
+    return render(
+        request,
+        'displaydocuments.html',
+        {'documents': documentspage,}
+    )
+
+def Commercial_vehicle_list(request):
+    '''function in view    '''
+    documents={}
+    documents = Commercial_vehicle_sub_category.objects.all()
+    paginator = Paginator(documents, 5) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        documentspage = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documentspage = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documentspage = paginator.page(paginator.num_pages)
+
+    # Render list page with the documents and the form
+    return render(
+        request,
+        'displaydocuments.html',
+        {'documents': documentspage,}
+    )
+
+def Other_vehicles_list(request):
+    '''function in view    '''
+    documents={}
+    documents = Other_vehicles_sub_category.objects.all()
+    paginator = Paginator(documents, 5) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        documentspage = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documentspage = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documentspage = paginator.page(paginator.num_pages)
+
+    # Render list page with the documents and the form
+    return render(
+        request,
+        'displaydocuments.html',
+        {'documents': documentspage,}
+    )
+
+def Spare_parts_cars_list(request):
+    '''function in view    '''
+    documents={}
+    documents = Spare_parts_cars_sub_category.objects.all()
+    paginator = Paginator(documents, 5) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        documentspage = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documentspage = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documentspage = paginator.page(paginator.num_pages)
+
+    # Render list page with the documents and the form
+    return render(
+        request,
+        'displaydocuments.html',
+        {'documents': documentspage,}
+    )
+
+def Motorcycles_list(request):
+    '''function in view    '''
+    documents={}
+    documents = Motorcycles_sub_category.objects.all()
+    paginator = Paginator(documents, 5) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        documentspage = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documentspage = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documentspage = paginator.page(paginator.num_pages)
+
+    # Render list page with the documents and the form
+    return render(
+        request,
+        'displaydocuments.html',
+        {'documents': documentspage,}
+    )
+
+def Bicycles_sub_category_list(request):
+    '''function in view    '''
+    documents={}
+    documents = Bicycles_sub_category.objects.all()
+    paginator = Paginator(documents, 5) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        documentspage = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documentspage = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documentspage = paginator.page(paginator.num_pages)
+
+    # Render list page with the documents and the form
+    return render(
+        request,
+        'displaydocuments.html',
+        {'documents': documentspage,}
+    )
+
+def Spare_parts_bikes_list(request):
+    '''function in view    '''
+    documents={}
+    documents = Spare_parts_bikes_sub_category.objects.all()
+    paginator = Paginator(documents, 5) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        documentspage = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documentspage = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documentspage = paginator.page(paginator.num_pages)
+
+    # Render list page with the documents and the form
+    return render(
+        request,
+        'displaydocuments.html',
+        {'documents': documentspage,}
+    )
+
+def Furniture_list(request):
+    '''function in view    '''
+    documents={}
+    documents = Furniture.objects.all()
+    paginator = Paginator(documents, 5) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        documentspage = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documentspage = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documentspage = paginator.page(paginator.num_pages)
+
+    # Render list page with the documents and the form
+    return render(
+        request,
+        'displaydocuments.html',
+        {'documents': documentspage,}
+    )
+
+
+
 
 def cars_list(request):
-    '''function to display cars '''
+    '''function in view    '''
     documents={}
     documents = Cars_sub_category.objects.all()
+    paginator = Paginator(documents, 5) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        documentspage = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documentspage = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documentspage = paginator.page(paginator.num_pages)
 
     # Render list page with the documents and the form
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documents,}
+        {'documents': documentspage,}
     )
+
+
 
 
 
@@ -618,3 +984,15 @@ def addpost(request):
                 return render(request, 'addpost.html')
     else:
         return render(request, 'addpost.html',)
+
+def get_ip(request):
+    """Returns the IP of the request, accounting for the possibility of being
+    behind a proxy.
+    """
+    ip = request.META.get("HTTP_X_FORWARDED_FOR", None)
+    if ip:
+        # X_FORWARDED_FOR returns client1, proxy1, proxy2,...
+        ip = ip.split(", ")[0]
+    else:
+        ip = request.META.get("REMOTE_ADDR", "")
+    return ip
