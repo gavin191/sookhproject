@@ -22,6 +22,7 @@ from django.views.generic import RedirectView
 
 urlpatterns=[
     url(r'^admin/', admin.site.urls),
+    url(r'^search/', include('haystack.urls')),
     url(r'^sookh/',include('appwithmodels.urls')),
     url(r'^$',RedirectView.as_view(url='/sookh/home/',permanent=True)),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

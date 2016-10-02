@@ -1,0 +1,8 @@
+{{ object.title }}
+{{ object.price }}
+{{ object.description }}
+{{ object.name }}
+{{ object.phone_number }}
+{{ object.city }}
+
+
