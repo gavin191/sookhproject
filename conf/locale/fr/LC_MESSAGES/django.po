@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-06 18:12+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\appwithmodels\templates\addpost.html:18
+msgid "Categories:"
+msgstr "Catégories:"
+
+#: .\appwithmodels\templates\addpost.html:20
+msgid "mobiles"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:21
+msgid "electronics"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:22
+msgid "cars"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:23
+msgid "bikes"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:24
+msgid "furniture"
+msgstr "meubles"
+
+#: .\appwithmodels\templates\addpost.html:88
+msgid "Mobile brand name:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:98
+msgid "Tablet brand name:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:106
+msgid "Type:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:107
+msgid "mobile"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:108
+msgid "tablet"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:109
+msgid "Mobile brand na:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:120
+msgid "computer item:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:123
+msgid "computer_brand_name:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:132
+msgid "tv_video_sub_category:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:139
+msgid "camera_item_sub_category:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:146
+msgid "Games_item_sub_category:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:154
+msgid "Fridge_ac_washingmachine_sub_category:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:162
+msgid "Kitchen_other_sub_category:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:170
+#: .\appwithmodels\templates\addpost.html:199
+#: .\appwithmodels\templates\addpost.html:224
+#: .\appwithmodels\templates\addpost.html:247
+#: .\appwithmodels\templates\addpost.html:279
+msgid "Kilometers driven:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:175
+#: .\appwithmodels\templates\addpost.html:204
+#: .\appwithmodels\templates\addpost.html:229
+#: .\appwithmodels\templates\addpost.html:252
+#: .\appwithmodels\templates\addpost.html:284
+msgid "Year manufacture:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:180
+#: .\appwithmodels\templates\addpost.html:209
+#: .\appwithmodels\templates\addpost.html:234
+#: .\appwithmodels\templates\addpost.html:257
+#: .\appwithmodels\templates\addpost.html:289
+msgid "Fuel:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:182
+#: .\appwithmodels\templates\addpost.html:211
+#: .\appwithmodels\templates\addpost.html:236
+#: .\appwithmodels\templates\addpost.html:259
+#: .\appwithmodels\templates\addpost.html:291
+msgid "petrol"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:183
+#: .\appwithmodels\templates\addpost.html:212
+#: .\appwithmodels\templates\addpost.html:237
+#: .\appwithmodels\templates\addpost.html:260
+#: .\appwithmodels\templates\addpost.html:292
+msgid "diesel"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:184
+#: .\appwithmodels\templates\addpost.html:213
+#: .\appwithmodels\templates\addpost.html:261
+#: .\appwithmodels\templates\addpost.html:293
+msgid "gas"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:193
+msgid "Cars brand name:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:197
+msgid "Cars model:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:222
+msgid "commercial_vehicle_brand_name:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:238
+msgid "gas<"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:245
+msgid "Other_vehicles_brand_name:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:268
+msgid "spare_parts_category:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:275
+msgid "motorcycle_brand_name:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:277
+msgid "bikes_model:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:300
+msgid "bicycle_brand_name:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:307
+msgid "spare_bikes_name"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:316
+msgid "Furniture type:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:327
+msgid "Price:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:334
+msgid "Description:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:339
+msgid "Photo:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:345
+msgid "Name:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:352
+msgid "Phone number:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:359
+msgid "City:"
+msgstr ""
+
+#: .\appwithmodels\templates\addpost.html:365
+msgid "Submit"
+msgstr ""
+
+#: .\sookhproject\settings.py:134
+msgid "English"
+msgstr ""
+
+#: .\sookhproject\settings.py:135
+msgid "French"
+msgstr ""

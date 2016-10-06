@@ -421,6 +421,10 @@ def home(request):
 def addpost(request):
     print("in addpost")
     if request.method == 'POST':
+        print("in post if")
+    else:
+        print("not in post if"+ request.method)
+    if request.method == 'POST':
         subcategories = subcategoriesview = request.POST.get("subcategories", "")
         print('subcategories' + subcategories)
         if(subcategories=='car'):
