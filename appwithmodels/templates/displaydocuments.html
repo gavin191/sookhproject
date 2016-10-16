@@ -1,7 +1,20 @@
 {% extends 'base.html' %}
 {% block   content %}
 {% load static %}
-    
+
+
+   <form method="post" action='{{ urls }}' >{% csrf_token %}
+       <label for="id_price_min">min</label>
+       <input id="id_price_min" maxlength="250" name="price_min" type="text"   />
+       <label for="id_price_max">max</label>
+       <input id="id_price_max" maxlength="250" name="price_max" type="text"   />
+        <label for="id_lowtohigh">lowtohigh</label>
+       <input type="radio" id="id_minmax" maxlength="250" name="minmax" value="lowtohigh"   />
+       <label for="id_lowtohigh">hightolow</label>
+       <input type="radio" id="id_minmax" maxlength="250" name="minmax" value="hightolow"  />
+       </br>
+        <button class="submit">submit</button>
+   </form> 
         <!-- List of uploaded documents -->
         {% if documents %}
             <div >
@@ -10,6 +23,8 @@
                     
                     </span>
                     <h1>{{ document.title }} </h1>
+                    <h1>{{ document.created_time }} </h1>
+                    <h1>{{ document.price }} </h1>
                 {% endfor %}
           
         {% else %}

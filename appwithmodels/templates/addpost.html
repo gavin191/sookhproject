@@ -386,49 +386,88 @@
 
 
 <script>
+	
+	var mobiles;
+	var tablets;
+	var accessories;
+	var computer;
+	var tv_video;
+	var camera;
+	var games;
+	var fridge;
+	var kitchen;
+	var car;
+	var commercial;
+	var othercars;
+	var sparepartscar;
+	var motorcycle;
+	var bicycle;
+	var sparepartsbikes;
+	var furnituretrans;
+	(function () {
+     car = '{% trans "car" %}';
+	 mobiles = '{% trans "mobiles" %}';
+	 tablets = '{% trans "tablets" %}';
+	 accessories = '{% trans "accessories" %}';
+	 computer = '{% trans "computer" %}';
+	 tv_video = '{% trans "tv_video" %}';
+	 camera = '{% trans "camera" %}';
+	 games = '{% trans "games" %}';
+	 fridge = '{% trans "fridge" %}';
+	 kitchen = '{% trans "kitchen" %}';
+	 commercial = '{% trans "commercial" %}';
+	 othercars = '{% trans "other vehicles" %}';
+	 sparepartscar = '{% trans "spare parts" %}';
+	 motorcycle = '{% trans "motorcycle" %}';
+	 bicycle = '{% trans "bicycle" %}';
+	 sparepartsbike = '{% trans "spare parts" %}';
+	 furnituretrans = '{% trans "furniture" %}';
+	console.log(car);
+})();
 	var form = $('#contactForm');
 	 var categories =$('#id_categories');
 	 var subcategories = $('#id_subcategories');
 	 var subcategories_label=$('#id_subcategories_label')
 	 var furniture=$('#id_furniture_type');
+	 
 
 	 	 categories.ready(function(){
 			  console.log("in ready")
-		 
+		 console.log(car);
 
 		 if(categories.val()=="mobiles"){
 			$('.nonmobilesdiv').find('input,select').prop('disabled',true);
 			$('.nonmobilesdiv').prop('hidden',true);
 			 $( ".subcategory" ).remove();
-              $(' <div class="subcategory"  > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="mobiles">mobiles</option><option value="tablets">tablets</option><option value="accessories">accessories</option></select></br></div>' ).insertAfter( ".categories" );
+              $(' <div class="subcategory"  > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="mobiles">'+ mobiles +'</option><option value="tablets">'+ tablets +'</option><option value="accessories">'+ accessories +'</option></select></br></div>' ).insertAfter( ".categories" );
 		      $( "#id_subcategories" ).trigger( "change" ); 
 		}
 		 else if(categories.val()=="electronics"){
 			 $('.nonelectronicsdiv').find('input,select').prop('disabled',true);
 			$('.nonelectronicsdiv').prop('hidden',true);
 			 $( ".subcategory" ).remove();
-              $('  <div class="subcategory"   > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="computer">computer</option><option value="tv_video">tv_video</option><option value="camera">camera</option><option value="games">games</option><option value="fridge">fridge</option><option value="kitchen">kitchen</option></select></br></div>' ).insertAfter( ".categories" );
+              $('  <div class="subcategory"   > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="computer">'+ computer +'</option><option value="tv_video">'+ tv_video +'</option><option value="camera">'+ camera +'</option><option value="games">'+ games +'</option><option value="fridge">'+ fridge +'</option><option value="kitchen">'+ kitchen +'</option></select></br></div>' ).insertAfter( ".categories" );
 	            $( "#id_subcategories" ).trigger( "change" ); 	
 	 }
 		 else if(categories.val()=="cars"){
 			 $('.noncarsdiv').find('input,select').prop('disabled',true);
 			$('.noncarsdiv').prop('hidden',true);
 			 $( ".subcategory" ).remove();
-              $('   <div class="subcategory"  > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="car">gettext("car");</option><option value="commercial">commercial</option><option value="other">other</option><option value="spare_cars">spare parts</option></select></br></div>' ).insertAfter( ".categories" );
+              $('   <div class="subcategory"  > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="car">'+ car  +'</option><option value="commercial">'+ commercial +'</option><option value="other">'+ othercars +'</option><option value="spare_cars">'+ sparepartscar +'</option></select></br></div>' ).insertAfter( ".categories" );
 	             $( "#id_subcategories" ).trigger( "change" ); 	
 	 }
 		else if(categories.val()=="bikes"){
 			$('.nonbikesdiv').find('input,select').prop('disabled',true);
 			$('.nonbikesdiv').prop('hidden',true);
 			$( ".subcategory" ).remove();
-              $('  <div class="subcategory"   > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="motorcycle">motorcycle</option><option value="bicycle">bicycle</option><option value="spare_bikes">spare parts</option></select></br></div>' ).insertAfter( ".categories" );
+              $('  <div class="subcategory"   > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="motorcycle">'+ motorcycle +'</option><option value="bicycle">'+ bicycle +'</option><option value="spare_bikes">'+ sparepartsbikes +'</option></select></br></div>' ).insertAfter( ".categories" );
 	 $( "#id_subcategories" ).trigger( "change" ); 	
 	 }
 		else if(categories.val()=="furniture"){
 			$('.nonfurniturediv').find('input,select').prop('disabled',true);
 			$('.nonfurniturediv').prop('hidden',true);
 			$( ".subcategory" ).remove();
-              $('   <div class="subcategory"   > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="furniture">furniture</option></select></br></div>' ).insertAfter( ".categories" );
+              $('   <div class="subcategory"   > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="furniture">'+ furnituretrans +'</option></select></br></div>' ).insertAfter( ".categories" );
 	$( "#id_subcategories" ).trigger( "change" ); 	
 	 }
 
@@ -436,41 +475,43 @@
 	 
 	 categories.change(function(){
 		 
+		 console.log(car);
 
 		 if(categories.val()=="mobiles"){
 			$('.nonmobilesdiv').find('input,select').prop('disabled',true);
 			$('.nonmobilesdiv').prop('hidden',true);
 			 $( ".subcategory" ).remove();
-              $(' <div class="subcategory"  > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="mobiles">mobiles</option><option value="tablets">tablets</option><option value="accessories">accessories</option></select></br></div>' ).insertAfter( ".categories" );
+              $(' <div class="subcategory"  > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="mobiles">'+ mobiles +'</option><option value="tablets">'+ tablets +'</option><option value="accessories">'+ accessories +'</option></select></br></div>' ).insertAfter( ".categories" );
 		      $( "#id_subcategories" ).trigger( "change" ); 
 		}
 		 else if(categories.val()=="electronics"){
 			 $('.nonelectronicsdiv').find('input,select').prop('disabled',true);
 			$('.nonelectronicsdiv').prop('hidden',true);
 			 $( ".subcategory" ).remove();
-              $('  <div class="subcategory"   > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="computer">computer</option><option value="tvvideo">tv_video</option><option value="camera">camera</option><option value="games">games</option><option value="fridge">fridge</option><option value="kitchen">kitchen</option></select></br></div>' ).insertAfter( ".categories" );
+              $('  <div class="subcategory"   > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="computer">'+ computer +'</option><option value="tv_video">'+ tv_video +'</option><option value="camera">'+ camera +'</option><option value="games">'+ games +'</option><option value="fridge">'+ fridge +'</option><option value="kitchen">'+ kitchen +'</option></select></br></div>' ).insertAfter( ".categories" );
 	            $( "#id_subcategories" ).trigger( "change" ); 	
 	 }
 		 else if(categories.val()=="cars"){
 			 $('.noncarsdiv').find('input,select').prop('disabled',true);
 			$('.noncarsdiv').prop('hidden',true);
 			 $( ".subcategory" ).remove();
-              $('   <div class="subcategory"  > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="car">car</option><option value="commercial">commercial</option><option value="other">other</option><option value="spare_cars">spare parts</option></select></br></div>' ).insertAfter( ".categories" );
+              $('   <div class="subcategory"  > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="car">'+ car  +'</option><option value="commercial">'+ commercial +'</option><option value="other">'+ othercars +'</option><option value="spare_cars">'+ sparepartscar +'</option></select></br></div>' ).insertAfter( ".categories" );
 	             $( "#id_subcategories" ).trigger( "change" ); 	
 	 }
 		else if(categories.val()=="bikes"){
 			$('.nonbikesdiv').find('input,select').prop('disabled',true);
 			$('.nonbikesdiv').prop('hidden',true);
 			$( ".subcategory" ).remove();
-              $('  <div class="subcategory"   > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="motorcycle">motorcycle</option><option value="bicycle">bicycle</option><option value="spare_bikes">spare parts</option></select></br></div>' ).insertAfter( ".categories" );
+              $('  <div class="subcategory"   > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="motorcycle">'+ motorcycle +'</option><option value="bicycle">'+ bicycle +'</option><option value="spare_bikes">'+ sparepartsbikes +'</option></select></br></div>' ).insertAfter( ".categories" );
 	 $( "#id_subcategories" ).trigger( "change" ); 	
 	 }
 		else if(categories.val()=="furniture"){
 			$('.nonfurniturediv').find('input,select').prop('disabled',true);
 			$('.nonfurniturediv').prop('hidden',true);
 			$( ".subcategory" ).remove();
-              $('   <div class="subcategory"   > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="furniture">furniture</option></select></br></div>' ).insertAfter( ".categories" );
-		 }
+              $('   <div class="subcategory"   > 	<label for="id_subcategories" id="id_subcategories_label"  >Subcategories:</label><select id="id_subcategories"  name="subcategories"   ><option value="furniture">'+ furnituretrans +'</option></select></br></div>' ).insertAfter( ".categories" );
+	$( "#id_subcategories" ).trigger( "change" ); 	
+	 }
 
 	 });
     /*

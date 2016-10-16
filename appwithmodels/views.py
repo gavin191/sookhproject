@@ -6,20 +6,62 @@ from django.core.urlresolvers import reverse
 from appwithmodels.models import Cars_sub_category,Furniture,Mobiles_sub_category,Tablets_sub_category,Accessories_sub_category,Computer_sub_category,Tv_video_sub_category,Camera_sub_category,Games_sub_category,Fridge_ac_washingmachine,Kitchen_other,Cars_sub_category,Commercial_vehicle_sub_category,Other_vehicles_sub_category,Spare_parts_cars_sub_category,Motorcycles_sub_category,Bicycles_sub_category,Spare_parts_bikes_sub_category,Furniture
 from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from haystack.query import SearchQuerySet
 
 # Create your views here.
 def ip_list(request):
     a=get_ip(request)
     print("ip is" + a)
 
+@csrf_protect
+def search_list(request):
+    print("in search")
+    if request.method == 'POST':
+        searchdata = request.POST.get("search", "")
+        print(searchdata)
+        all_results = SearchQuerySet().filter(content=searchdata)
+        print(all_results)
+        paginator = Paginator(all_results, 5) # Show 25 contacts per page
+        page = request.GET.get('page')
+        try:
+            documentspage = paginator.page(page)
+        except PageNotAnInteger:
+                # If page is not an integer, deliver first page.
+                documentspage = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            documentspage = paginator.page(paginator.num_pages)
+        return render(
+            request,
+            'home.html',
+            {'documents': documentspage,}
+        )
+    else:
+        return render(request, 'home.html',)
 
 
 
 
+@csrf_protect
 def Mobiles_list(request):
     '''function in view    '''
     documents={}
-    documents = Mobiles_sub_category.objects.all()
+    min=request.POST.get("price_min", "")
+    max=request.POST.get("price_max", "")
+    minmax=request.POST.get("minmax", "")
+    if(min!=''):
+        if(max!=''):
+            documents = Mobiles_sub_category.objects.filter(price__range=(min, max))
+        else:
+            documents = Mobiles_sub_category.objects.filter(price__gte=min)
+    else:
+        documents = Mobiles_sub_category.objects.all()
+    if(minmax=='lowtohigh'):
+        documents=  documents.order_by('price')
+    elif(minmax=='hightolow'):
+        documents= documents.order_by('-price')
+
+
     paginator = Paginator(documents, 5) # Show 25 contacts per page
 
     page = request.GET.get('page')
@@ -36,13 +78,28 @@ def Mobiles_list(request):
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documentspage,}
+        {'documents': documentspage,'urls':'/sookh/mobiles/'}
     )
 
 def Tablets_list(request):
     '''function in view    '''
     documents={}
-    documents = Tablets_sub_category.objects.all()
+    min=request.POST.get("price_min", "")
+    max=request.POST.get("price_max", "")
+    minmax=request.POST.get("minmax", "")
+    if(min!=''):
+        if(max!=''):
+            documents = Tablets_sub_category.objects.filter(price__range=(min, max))
+        else:
+            documents = Tablets_sub_category.objects.filter(price__gte=min)
+    else:
+        documents = Tablets_sub_category.objects.all()
+    if(minmax=='lowtohigh'):
+        documents=  documents.order_by('price')
+    elif(minmax=='hightolow'):
+        documents= documents.order_by('-price')
+
+
     paginator = Paginator(documents, 5) # Show 25 contacts per page
 
     page = request.GET.get('page')
@@ -59,13 +116,27 @@ def Tablets_list(request):
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documentspage,}
+        {'documents': documentspage,'urls':'//sookh/tablets/'}
     )
 
 def Accessories_list(request):
     '''function in view    '''
     documents={}
-    documents = Tablets_sub_category.objects.all()
+    min=request.POST.get("price_min", "")
+    max=request.POST.get("price_max", "")
+    minmax=request.POST.get("minmax", "")
+    if(min!=''):
+        if(max!=''):
+            documents = Accessories_sub_category.objects.filter(price__range=(min, max))
+        else:
+            documents = Accessories_sub_category.objects.filter(price__gte=min)
+    else:
+        documents = Accessories_sub_category.objects.all()
+    if(minmax=='lowtohigh'):
+        documents=  documents.order_by('price')
+    elif(minmax=='hightolow'):
+        documents= documents.order_by('-price')
+
     paginator = Paginator(documents, 5) # Show 25 contacts per page
 
     page = request.GET.get('page')
@@ -82,13 +153,27 @@ def Accessories_list(request):
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documentspage,}
+        {'documents': documentspage,'urls':'/sookh/accessories/'}
     )
 
 def Computer_list(request):
     '''function in view    '''
     documents={}
-    documents = Computer_sub_category.objects.all()
+    min=request.POST.get("price_min", "")
+    max=request.POST.get("price_max", "")
+    minmax=request.POST.get("minmax", "")
+    if(min!=''):
+        if(max!=''):
+            documents = Computer_sub_category.objects.filter(price__range=(min, max))
+        else:
+            documents = Computer_sub_category.objects.filter(price__gte=min)
+    else:
+        documents = Computer_sub_category.objects.all()
+    if(minmax=='lowtohigh'):
+        documents=  documents.order_by('price')
+    elif(minmax=='hightolow'):
+        documents= documents.order_by('-price')
+
     paginator = Paginator(documents, 5) # Show 25 contacts per page
 
     page = request.GET.get('page')
@@ -105,13 +190,28 @@ def Computer_list(request):
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documentspage,}
+        {'documents': documentspage,'urls':'/sookh/computer/'}
     )
 
 def Tv_video_list(request):
     '''function in view    '''
     documents={}
-    documents = Tv_video_sub_category.objects.all()
+    min=request.POST.get("price_min", "")
+    max=request.POST.get("price_max", "")
+    minmax=request.POST.get("minmax", "")
+    if(min!=''):
+        if(max!=''):
+            documents = Tv_video_sub_category.objects.filter(price__range=(min, max))
+        else:
+            documents = Tv_video_sub_category.objects.filter(price__gte=min)
+    else:
+        documents = Tv_video_sub_category.objects.all()
+    if(minmax=='lowtohigh'):
+        documents=  documents.order_by('price')
+    elif(minmax=='hightolow'):
+        documents= documents.order_by('-price')
+
+
     paginator = Paginator(documents, 5) # Show 25 contacts per page
 
     page = request.GET.get('page')
@@ -128,13 +228,27 @@ def Tv_video_list(request):
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documentspage,}
+        {'documents': documentspage,'urls':'/sookh/tvvideo/'}
     )
 
 def Camera_list(request):
     '''function in view    '''
     documents={}
-    documents = Camera_sub_category.objects.all()
+    min=request.POST.get("price_min", "")
+    max=request.POST.get("price_max", "")
+    minmax=request.POST.get("minmax", "")
+    if(min!=''):
+        if(max!=''):
+            documents = Camera_sub_category.objects.filter(price__range=(min, max))
+        else:
+            documents = Camera_sub_category.objects.filter(price__gte=min)
+    else:
+        documents = Camera_sub_category.objects.all()
+    if(minmax=='lowtohigh'):
+        documents=  documents.order_by('price')
+    elif(minmax=='hightolow'):
+        documents= documents.order_by('-price')
+
     paginator = Paginator(documents, 5) # Show 25 contacts per page
 
     page = request.GET.get('page')
@@ -151,13 +265,28 @@ def Camera_list(request):
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documentspage,}
+        {'documents': documentspage,'urls':'/sookh/camera/'}
     )
 
 def Games_list(request):
     '''function in view    '''
     documents={}
-    documents = Games_sub_category.objects.all()
+    min=request.POST.get("price_min", "")
+    max=request.POST.get("price_max", "")
+    minmax=request.POST.get("minmax", "")
+    if(min!=''):
+        if(max!=''):
+            documents = Games_sub_category.objects.filter(price__range=(min, max))
+        else:
+            documents = Games_sub_category.objects.filter(price__gte=min)
+    else:
+        documents = Games_sub_category.objects.all()
+    if(minmax=='lowtohigh'):
+        documents=  documents.order_by('price')
+    elif(minmax=='hightolow'):
+        documents= documents.order_by('-price')
+
+
     paginator = Paginator(documents, 5) # Show 25 contacts per page
 
     page = request.GET.get('page')
@@ -174,13 +303,28 @@ def Games_list(request):
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documentspage,}
+        {'documents': documentspage,'urls':'/sookh/games/'}
     )
 
 def Fridge_ac_washingmachine_list(request):
     '''function in view    '''
     documents={}
-    documents = Fridge_ac_washingmachine.objects.all()
+    min=request.POST.get("price_min", "")
+    max=request.POST.get("price_max", "")
+    minmax=request.POST.get("minmax", "")
+    if(min!=''):
+        if(max!=''):
+            documents = Fridge_ac_washingmachine.objects.filter(price__range=(min, max))
+        else:
+            documents = Fridge_ac_washingmachine.objects.filter(price__gte=min)
+    else:
+        documents = Fridge_ac_washingmachine.objects.all()
+    if(minmax=='lowtohigh'):
+        documents=  documents.order_by('price')
+    elif(minmax=='hightolow'):
+        documents= documents.order_by('-price')
+
+
     paginator = Paginator(documents, 5) # Show 25 contacts per page
 
     page = request.GET.get('page')
@@ -197,13 +341,28 @@ def Fridge_ac_washingmachine_list(request):
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documentspage,}
+        {'documents': documentspage,'urls':'/sookh/fridgeacwashingmachine/'}
     )
 
 def Kitchen_other_list(request):
     '''function in view    '''
     documents={}
-    documents = Kitchen_other.objects.all()
+    min=request.POST.get("price_min", "")
+    max=request.POST.get("price_max", "")
+    minmax=request.POST.get("minmax", "")
+    if(min!=''):
+        if(max!=''):
+            documents = Kitchen_other.objects.filter(price__range=(min, max))
+        else:
+            documents = Kitchen_other.objects.filter(price__gte=min)
+    else:
+        documents = Kitchen_other.objects.all()
+    if(minmax=='lowtohigh'):
+        documents=  documents.order_by('price')
+    elif(minmax=='hightolow'):
+        documents= documents.order_by('-price')
+
+
     paginator = Paginator(documents, 5) # Show 25 contacts per page
 
     page = request.GET.get('page')
@@ -220,13 +379,28 @@ def Kitchen_other_list(request):
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documentspage,}
+        {'documents': documentspage,'urls':'/sookh/kitchen/'}
     )
 
 def Commercial_vehicle_list(request):
     '''function in view    '''
     documents={}
-    documents = Commercial_vehicle_sub_category.objects.all()
+    min=request.POST.get("price_min", "")
+    max=request.POST.get("price_max", "")
+    minmax=request.POST.get("minmax", "")
+    if(min!=''):
+        if(max!=''):
+            documents = Commercial_vehicle_sub_category.objects.filter(price__range=(min, max))
+        else:
+            documents = Commercial_vehicle_sub_category.objects.filter(price__gte=min)
+    else:
+        documents = Commercial_vehicle_sub_category.objects.all()
+    if(minmax=='lowtohigh'):
+        documents=  documents.order_by('price')
+    elif(minmax=='hightolow'):
+        documents= documents.order_by('-price')
+
+
     paginator = Paginator(documents, 5) # Show 25 contacts per page
 
     page = request.GET.get('page')
@@ -243,13 +417,27 @@ def Commercial_vehicle_list(request):
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documentspage,}
+        {'documents': documentspage,'urls':'/sookh/commercial/'}
     )
 
 def Other_vehicles_list(request):
     '''function in view    '''
     documents={}
-    documents = Other_vehicles_sub_category.objects.all()
+    min=request.POST.get("price_min", "")
+    max=request.POST.get("price_max", "")
+    minmax=request.POST.get("minmax", "")
+    if(min!=''):
+        if(max!=''):
+            documents = Other_vehicles_sub_category.objects.filter(price__range=(min, max))
+        else:
+            documents = Other_vehicles_sub_category.objects.filter(price__gte=min)
+    else:
+        documents = Other_vehicles_sub_category.objects.all()
+    if(minmax=='lowtohigh'):
+        documents=  documents.order_by('price')
+    elif(minmax=='hightolow'):
+        documents= documents.order_by('-price')
+
     paginator = Paginator(documents, 5) # Show 25 contacts per page
 
     page = request.GET.get('page')
@@ -266,13 +454,28 @@ def Other_vehicles_list(request):
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documentspage,}
+        {'documents': documentspage,'urls':'/sookh/othervehicles/'}
     )
 
 def Spare_parts_cars_list(request):
     '''function in view    '''
     documents={}
-    documents = Spare_parts_cars_sub_category.objects.all()
+    min=request.POST.get("price_min", "")
+    max=request.POST.get("price_max", "")
+    minmax=request.POST.get("minmax", "")
+    if(min!=''):
+        if(max!=''):
+            documents = Spare_parts_cars_sub_category.objects.filter(price__range=(min, max))
+        else:
+            documents = Spare_parts_cars_sub_category.objects.filter(price__gte=min)
+    else:
+        documents = Spare_parts_cars_sub_category.objects.all()
+    if(minmax=='lowtohigh'):
+        documents=  documents.order_by('price')
+    elif(minmax=='hightolow'):
+        documents= documents.order_by('-price')
+
+ 
     paginator = Paginator(documents, 5) # Show 25 contacts per page
 
     page = request.GET.get('page')
@@ -289,13 +492,27 @@ def Spare_parts_cars_list(request):
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documentspage,}
+        {'documents': documentspage,'urls':'/sookh/sparecars/'}
     )
 
 def Motorcycles_list(request):
     '''function in view    '''
     documents={}
-    documents = Motorcycles_sub_category.objects.all()
+    min=request.POST.get("price_min", "")
+    max=request.POST.get("price_max", "")
+    minmax=request.POST.get("minmax", "")
+    if(min!=''):
+        if(max!=''):
+            documents = Motorcycles_sub_category.objects.filter(price__range=(min, max))
+        else:
+            documents = Motorcycles_sub_category.objects.filter(price__gte=min)
+    else:
+        documents = Motorcycles_sub_category.objects.all()
+    if(minmax=='lowtohigh'):
+        documents=  documents.order_by('price')
+    elif(minmax=='hightolow'):
+        documents= documents.order_by('-price')
+
     paginator = Paginator(documents, 5) # Show 25 contacts per page
 
     page = request.GET.get('page')
@@ -312,12 +529,27 @@ def Motorcycles_list(request):
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documentspage,}
+        {'documents': documentspage,'urls':'/sookh/motorcycles/'}
     )
 
 def Bicycles_sub_category_list(request):
     '''function in view    '''
     documents={}
+    min=request.POST.get("price_min", "")
+    max=request.POST.get("price_max", "")
+    minmax=request.POST.get("minmax", "")
+    if(min!=''):
+        if(max!=''):
+            documents = Bicycles_sub_category.objects.filter(price__range=(min, max))
+        else:
+            documents = Bicycles_sub_category.objects.filter(price__gte=min)
+    else:
+        documents = Bicycles_sub_category.objects.all()
+    if(minmax=='lowtohigh'):
+        documents=  documents.order_by('price')
+    elif(minmax=='hightolow'):
+        documents= documents.order_by('-price')
+
     documents = Bicycles_sub_category.objects.all()
     paginator = Paginator(documents, 5) # Show 25 contacts per page
 
@@ -335,13 +567,28 @@ def Bicycles_sub_category_list(request):
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documentspage,}
+        {'documents': documentspage,'urls':'/sookh/bicycles/'}
     )
 
 def Spare_parts_bikes_list(request):
     '''function in view    '''
     documents={}
-    documents = Spare_parts_bikes_sub_category.objects.all()
+    min=request.POST.get("price_min", "")
+    max=request.POST.get("price_max", "")
+    minmax=request.POST.get("minmax", "")
+    if(min!=''):
+        if(max!=''):
+            documents = Spare_parts_bikes_sub_category.objects.filter(price__range=(min, max))
+        else:
+            documents = Spare_parts_bikes_sub_category.objects.filter(price__gte=min)
+    else:
+        documents = Spare_parts_bikes_sub_category.objects.all()
+    if(minmax=='lowtohigh'):
+        documents=  documents.order_by('price')
+    elif(minmax=='hightolow'):
+        documents= documents.order_by('-price')
+
+
     paginator = Paginator(documents, 5) # Show 25 contacts per page
 
     page = request.GET.get('page')
@@ -358,13 +605,28 @@ def Spare_parts_bikes_list(request):
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documentspage,}
+        {'documents': documentspage,'urls':'/sookh/sparebikes/'}
     )
 
 def Furniture_list(request):
     '''function in view    '''
     documents={}
-    documents = Furniture.objects.all()
+    min=request.POST.get("price_min", "")
+    max=request.POST.get("price_max", "")
+    minmax=request.POST.get("minmax", "")
+    if(min!=''):
+        if(max!=''):
+            documents = Furniture.objects.filter(price__range=(min, max))
+        else:
+            documents = Furniture.objects.filter(price__gte=min)
+    else:
+        documents = Furniture.objects.all()
+    if(minmax=='lowtohigh'):
+        documents=  documents.order_by('price')
+    elif(minmax=='hightolow'):
+        documents= documents.order_by('-price')
+
+
     paginator = Paginator(documents, 5) # Show 25 contacts per page
 
     page = request.GET.get('page')
@@ -381,7 +643,7 @@ def Furniture_list(request):
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documentspage,}
+        {'documents': documentspage,'urls':'/sookh/furniture/'}
     )
 
 
@@ -390,7 +652,22 @@ def Furniture_list(request):
 def cars_list(request):
     '''function in view    '''
     documents={}
-    documents = Cars_sub_category.objects.all()
+    min=request.POST.get("price_min", "")
+    max=request.POST.get("price_max", "")
+    minmax=request.POST.get("minmax", "")
+    if(min!=''):
+        if(max!=''):
+            documents = Cars_sub_category.objects.filter(price__range=(min, max))
+        else:
+            documents = Cars_sub_category.objects.filter(price__gte=min)
+    else:
+        documents = Cars_sub_category.objects.all()
+    if(minmax=='lowtohigh'):
+        documents=  documents.order_by('price')
+    elif(minmax=='hightolow'):
+        documents= documents.order_by('-price')
+
+
     paginator = Paginator(documents, 5) # Show 25 contacts per page
 
     page = request.GET.get('page')
@@ -407,7 +684,7 @@ def cars_list(request):
     return render(
         request,
         'displaydocuments.html',
-        {'documents': documentspage,}
+        {'documents': documentspage,'urls':'/sookh/cars/'}
     )
 
 

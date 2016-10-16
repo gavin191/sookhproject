@@ -19,18 +19,18 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
 from django.conf.urls.i18n import i18n_patterns
-from django.views.i18n import javascript_catalog
+from django.views.i18n import JavaScriptCatalog
 
-js_info_dict = {
-    'packages': ('appwithmodels',)
-}
+
+
 
 urlpatterns=[
+    #url(r'^jsi18n/$', JavaScriptCatalog.as_view(packages=['appwithmodels']), name='javascript-catalog'),
     url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^rosetta/', include('rosetta.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^$',RedirectView.as_view(url='/sookh/home/',permanent=True)),
     url(r'^search/', include('haystack.urls')),
     url(r'^sookh/',include('appwithmodels.urls')),
-    url(r'^jsi8n/$', 'django.views.i18n.javascript_catalog', js_info_dict),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

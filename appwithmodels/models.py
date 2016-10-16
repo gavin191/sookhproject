@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone
 
 # Create your models here.
 #modile category section
@@ -13,7 +13,7 @@ class Mobiles(models.Model):
     city = models.CharField(max_length=250)
     subcategories = models.CharField(max_length=250,default='mobiles')
     categories = models.CharField(max_length=250,default='mobiles')
-       
+    created_time=models.DateTimeField(default=timezone.now)   
 
     class  Meta:
         abstract = True
@@ -38,7 +38,8 @@ class Electronics(models.Model):
     phone_number = models.IntegerField()
     city = models.CharField(max_length=250)
     subcategories = models.CharField(max_length=250,default='computer')
-    categories = models.CharField(max_length=250,default='electronics') 
+    categories = models.CharField(max_length=250,default='electronics')
+    created_time=models.DateTimeField(default=timezone.now) 
 
     class  Meta:
         abstract = True
@@ -74,6 +75,7 @@ class Cars(models.Model):
     city = models.CharField(max_length=250)
     subcategories = models.CharField(max_length=250,default='car')
     categories = models.CharField(max_length=250,default='cars')
+    created_time=models.DateTimeField(default=timezone.now)
 
     class  Meta:
         abstract = True
@@ -109,7 +111,8 @@ class Bikes(models.Model):
     phone_number = models.IntegerField()
     city = models.CharField(max_length=250)
     subcategories = models.CharField(max_length=250,default='bikes')
-    categories = models.CharField(max_length=250,default='motorcycle') 
+    categories = models.CharField(max_length=250,default='motorcycle')
+    created_time=models.DateTimeField(default=timezone.now) 
 
     class  Meta:
         abstract = True
@@ -121,6 +124,7 @@ class Motorcycles_sub_category(Bikes):
     kilometers_driven = models.IntegerField()
     year_manufacture = models.IntegerField()
     fuel = models.CharField(max_length=250)
+    
 
 class Bicycles_sub_category(Bikes):
     bicycle_brand_name = models.CharField(max_length=250)
@@ -139,6 +143,7 @@ class Furniture(models.Model):
     city = models.CharField(max_length=250)
     categories=models.CharField(max_length=250,default='furniture')
     subcategories=models.CharField(max_length=250,default='furniture')
+    created_time=models.DateTimeField(default=timezone.now)
 
 
 

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'haystack',
     'rosetta',
+    'pytz',
     'appwithmodels',
     'debug_toolbar',
 ]
@@ -98,7 +99,7 @@ HAYSTACK_CONNECTIONS = {
 }
 
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'conf/locale'),
+    os.path.join(BASE_DIR, 'locale'),
 )
 
 
@@ -129,7 +130,7 @@ DATABASES = {
 }
 
 from django.utils.translation import ugettext_lazy as _
-
+from django.utils.translation import gettext
 LANGUAGES = (
     ('en', _('English')),
     ('fr', _('French')),
@@ -159,7 +160,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Aden'
 
 USE_I18N = True
 

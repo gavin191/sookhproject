@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'furniture/',views.Furniture_list),
     url(r'ip/',views.ip_list),
     url(r'addpost/',views.addpost),
+    url(r'search_list/',views.search_list),
 
 ]

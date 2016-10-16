@@ -4,5 +4,6 @@
 {{ object.name }}
 {{ object.phone_number }}
 {{ object.city }}
+{{ object.created_time }}
 
 
