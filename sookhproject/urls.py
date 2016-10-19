@@ -27,7 +27,7 @@ from django.views.i18n import JavaScriptCatalog
 urlpatterns=[
     #url(r'^jsi18n/$', JavaScriptCatalog.as_view(packages=['appwithmodels']), name='javascript-catalog'),
     url(r'^i18n/', include('django.conf.urls.i18n')),
-    url(r'^rosetta/', include('rosetta.urls')),
+   # url(r'^rosetta/', include('rosetta.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^$',RedirectView.as_view(url='/sookh/home/',permanent=True)),
     url(r'^search/', include('haystack.urls')),

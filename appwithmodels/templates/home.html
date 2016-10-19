@@ -3,9 +3,16 @@
 {% load i18n %}
 {% load static %}
 
+<!-- .container is main centered wrapper -->
+<div class="section hero">
+<div class="container">
+     <div class="row">
+    <div class="two columns"><h2 class="section-heading">sookh </h2></div>
+     <div class="six columns"><h1> </h1></div>
 <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+    <div class="two columns">
     <input name="next" type="hidden" value="{{ redirect_to }}" />
-    <select name="language">
+    <select class="u-full-width" name="language">
         {% get_current_language as LANGUAGE_CODE %}
         {% get_available_languages as LANGUAGES %}
         {% get_language_info_list for LANGUAGES as languages %}
@@ -15,54 +22,52 @@
             </option>
         {% endfor %}
     </select>
-    <input type="submit" value="Go" />
+    </div>
+    <div class="two columns">
+    <input class="u-full-width" type="submit" value="Go" />
+    </div>
+
 </form>
-<h4>{% trans "welcome" %}</h4>
-<h1>hello</h1>
-<a href="/sookh/mobiles" >mobiles</a>
-<a href="/sookh/tablets" >tablets</a>
-<a href="/sookh/accessories" >accessories</a>
-<a href="/sookh/computer" >computer</a>
-<a href="/sookh/tvvideo" >tvvideo</a>
-<a href="/sookh/camera" >camera</a>
-<a href="/sookh/games" >games</a>
-<a href="/sookh/fridgeacwashingmachine" >fridgeacwashingmachine</a>
-<a href="/sookh/kitchen" >kitchen</a>
-<a href="/sookh/cars" >cars</a>
-<a href="/sookh/commercial" >commercial</a>
-<a href="/sookh/othervehicles" >othervehicles</a>
-<a href="/sookh/sparecars" >sparecars</a>
-<a href="/sookh/motorcycles" >motorcycles</a>
-<a href="/sookh/bicycles" >bicycles</a>
-<a href="/sookh/sparebikes" >sparebikes</a>
-<a href="/sookh/furniture" >furniture</a>
+     </div>
+</div>
+</div>
+
+
+<div class="section ">
+   <div class="container">
+       <div class="row">
 
 
 <form name="searchform" id="searchform" method="post"  action="/sookh/search_list/">{% csrf_token %}
-
-<div id='searchdiv' > 				
-<label for="id_search">Search:</label>
-<input id="id_search" maxlength="250" name="search" type="text" required />
-</br>
+<div id='searchdiv' > 
+<div class="three columns">
+				
+<label for="id_search"><h4>Search:</h4></label>
+</div>
+<div class="six columns">
+<input id="id_search" maxlength="250" name="search" type="text" class="u-full-width" required />
+</div>
+<div class="three columns">
+ <button class="submit button-primary">{% trans "Submit" %}</button>
+</div>
+ </div>
+</form> 
+</div>
+   </div>
 </div>
 
- <button class="submit">{% trans "Submit" %}</button>
- <br />
- 
-</form> 
 
+<div class="section ">
+   <div class="container">
        <!-- List of uploaded documents -->
  {% if documents %}
-            <div >
+            <div class="row">
                 {% for document in documents %}
                     <span><img src="{{ document.object.photo.url }}" width="100px" height="100px" />
                     
                     </span>
                     <h1>{{ document.object.title }} </h1>
                 {% endfor %}
-          
-        {% else %}
-            <p>No documents.</p>
         {% endif %}
 </div> 
 {% for num in documents.paginator.page_range %}
@@ -72,5 +77,114 @@
     <a href="?page={{ num }}"> {{ num }}</a>
   {% endifequal %} 
 {% endfor %}
+
+
+
+<div class="section ">
+   <div class="container"> 
+        <div class="row">
+            <div class="four columns">
+                  <a href="/sookh/mobiles" ><img    src="{% static "images/mobile.png" %}" width="100px" height="100px" /></a>
+            </div>
+            <div class="four columns">
+                    <a href="/sookh/tablets" ><img    src="{% static "images/tablets.jpg" %}" width="100px" height="100px" /></a>
+            </div>
+            <div class="four columns">
+                   <a href="/sookh/accessories" ><img    src="{% static "images/acessories.jpg" %}" width="100px" height="100px" /></a>
+            </div>
+        </div>
+       <div class="section">
+            <div class="row">
+                <div class="four columns">
+                    <a class="u-full-width" href="/sookh/computer"  ><img  src="{% static "images/computer.png" %}" width="100px" height="100px" /></a>
+                </div>
+
+                <div class="four columns">
+                    <a class="u-full-width" href="/sookh/tvvideo" ><img  src="{% static "images/video.png" %}" width="100px" height="100px" /></a>
+                </div>
+
+                <div class="four columns">
+                    <a class="u-full-width" href="/sookh/camera" ><img  src="{% static "images/camera.jpg" %}" width="100px" height="100px" /></a>
+                </div>
+            </div>
+       </div>
+         <div class="section">
+              <div class="row">
+            
+                <div class="four columns">
+                   <a href="/sookh/games" ><img  src="{% static "images/games.png" %}" width="100px" height="100px" /></a>
+                </div>
+
+                <div class="four columns">
+                    <a href="/sookh/fridgeacwashingmachine" ><img  src="{% static "images/fridge.png" %}" width="100px" height="100px" /></a>
+                </div>
+
+                <div class="four columns">
+                    <a href="/sookh/kitchen" ><img  src="{% static "images/kitchen.jpg" %}" width="100px" height="100px" /></a>
+                </div>
+            </div>
+       </div>
+         <div class="section">
+              <div class="row">
+                <div class="four columns">
+                    <a href="/sookh/cars" ><img  src="{% static "images/cars.png" %}" width="100px" height="100px" /></a>
+                </div>
+
+                <div class="four columns">
+                   <a href="/sookh/commercial" ><img  src="{% static "images/commercial.jpg" %}" width="100px" height="100px" /></a>
+                </div>
+
+                <div class="four columns">
+                    <a href="/sookh/othervehicles" ><img  src="{% static "images/othervehicles.jpg" %}" width="100px" height="100px" /></a>
+                </div>
+            </div>
+       </div>
+
+         <div class="section">
+              <div class="row">
+                <div class="four columns">
+                    <a href="/sookh/sparecars" ><img  src="{% static "images/carspares.jpg" %}" width="100px" height="100px" /></a>
+                </div>
+
+                <div class="four columns">
+                   <a href="/sookh/motorcycles" ><img  src="{% static "images/motorcycles.png" %}" width="100px" height="100px" /></a>
+                </div>
+
+                <div class="four columns">
+                    <a href="/sookh/bicycles" ><img  src="{% static "images/bicycles.png" %}" width="100px" height="100px" /></a>
+                </div>
+            </div>
+       </div>
+
+         <div class="section">
+              <div class="row">
+                <div class="four columns">
+                    <a href="/sookh/sparebikes" ><img  src="{% static "images/bikespares.jpg" %}" width="100px" height="100px" /></a>
+                </div>
+
+                <div class="four columns">
+                   <a href="/sookh/furniture" ><img  src="{% static "images/furniture.jpg" %}" width="100px" height="100px" /></a>
+                </div>
+
+                <div class="four columns">
+                  <h1></h1>
+                </div>
+            </div>
+       </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {% endblock %}

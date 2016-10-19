@@ -3,41 +3,97 @@
 {% load static %}
 
 
+<div class="section ">
+   <div class="container">
+       
+
    <form method="post" action='{{ urls }}' >{% csrf_token %}
+    <div class="row"> 
+       <div class="one column">
        <label for="id_price_min">min</label>
-       <input id="id_price_min" maxlength="250" name="price_min" type="text"   />
+       </div>
+       <div class="one column">
+       <input class="u-full-width" id="id_price_min" maxlength="250" name="price_min" type="text" width="25px"   />
+       </div>
+        
+    
+       <div class="one column">
        <label for="id_price_max">max</label>
-       <input id="id_price_max" maxlength="250" name="price_max" type="text"   />
-        <label for="id_lowtohigh">lowtohigh</label>
+       </div>
+       <div class="one column">
+       <input class="u-full-width" id="id_price_max" maxlength="250" name="price_max" type="text"   width="25px"  />
+       </div>
+      <div class="two columns">
+        <label for="id_lowtohigh">
+            <span class="label-body"> 
        <input type="radio" id="id_minmax" maxlength="250" name="minmax" value="lowtohigh"   />
-       <label for="id_lowtohigh">hightolow</label>
+            </span>
+       lowtohigh
+       </label>
+      </div>
+      <div class="two columns">
+       <label for="id_lowtohigh">
+       <span class="label-body"> 
        <input type="radio" id="id_minmax" maxlength="250" name="minmax" value="hightolow"  />
-       </br>
+       </span>
+       hightolow
+       </label>
+      </div>
+
+      <div class="two columns">
         <button class="submit">submit</button>
+      </div>
+           <div class="two columns" >
+          <h1></h1>
+            </div>
+    </div>
    </form> 
+     </div>
+   
+</div>
+
         <!-- List of uploaded documents -->
         {% if documents %}
-            <div >
                 {% for document in documents %}
-                    <span><img src="{{ document.photo.url }}" width="100px" height="100px" />
-                    
+                 <div class="section "> 
+                     <div class="container">
+                         <div class="row">
+                    <span class="three columns"><img  src="{{ document.photo.url }}" width="100px" height="100px" />
                     </span>
-                    <h1>{{ document.title }} </h1>
-                    <h1>{{ document.created_time }} </h1>
-                    <h1>{{ document.price }} </h1>
+                 
+             
+                 
+                    
+                    <h4 class="three columns" >{{ document.title }} </h4>
+                    <h4 class="three columns" >{{ document.created_time }} </h4>
+                    <h4 class="three columns" >{{ document.price }} </h4>
+                         </div>
+                     </div>
+                    </div> 
                 {% endfor %}
           
         {% else %}
-            <p>No documents.</p>
+            <p  >No documents.</p>
         {% endif %}
-</div> 
+       
+                 
+             
+      
 {% for num in documents.paginator.page_range %}
   {% ifequal num documents.number %}
+   <div class="section "> 
+     <div class="container">
+    <div class="row"> 
     <span class="current"><b>{{ num }}</b></span>
   {% else %}
     <a href="?page={{ num }}"> {{ num }}</a>
   {% endifequal %} 
 {% endfor %}
+ </div>
+</div>
+       </div>
+   
+
 <!--
         <div class="pagination">
     <span class="step-links">
