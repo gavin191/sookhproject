@@ -8,7 +8,8 @@
 <div class="container">
      <div class="row">
     <div class="two columns"><h2 class="section-heading">sookh </h2></div>
-     <div class="six columns"><h1> </h1></div>
+     <div class="four columns"><h1> </h1></div>
+     <div class="two columns"><a class="u-full-width" href="/sookh/addpost" ><button class="button-primary">{% trans "Post Ad" %}</button></a></div>
 <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
     <div class="two columns">
     <input name="next" type="hidden" value="{{ redirect_to }}" />
